@@ -32,6 +32,39 @@
     minimatch "^3.1.2"
     strip-json-comments "^3.1.1"
 
+"@fortawesome/fontawesome-common-types@6.2.1":
+  version "6.2.1"
+  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-6.2.1.tgz#411e02a820744d3f7e0d8d9df9d82b471beaa073"
+  integrity sha512-Sz07mnQrTekFWLz5BMjOzHl/+NooTdW8F8kDQxjWwbpOJcnoSg4vUDng8d/WR1wOxM0O+CY9Zw0nR054riNYtQ==
+
+"@fortawesome/fontawesome-svg-core@^6.2.1":
+  version "6.2.1"
+  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-svg-core/-/fontawesome-svg-core-6.2.1.tgz#e87e905e444b5e7b715af09b64d27b53d4c8f9d9"
+  integrity sha512-HELwwbCz6C1XEcjzyT1Jugmz2NNklMrSPjZOWMlc+ZsHIVk+XOvOXLGGQtFBwSyqfJDNgRq4xBCwWOaZ/d9DEA==
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "6.2.1"
+
+"@fortawesome/free-brands-svg-icons@^6.2.1":
+  version "6.2.1"
+  resolved "https://registry.yarnpkg.com/@fortawesome/free-brands-svg-icons/-/free-brands-svg-icons-6.2.1.tgz#04a6d6f7898f7ef392aba7a65030a584d4f4c84f"
+  integrity sha512-L8l4MfdHPmZlJ72PvzdfwOwbwcCAL0vx48tJRnI6u1PJXh+j2f3yDoKyQgO3qjEsgD5Fr2tQV/cPP8F/k6aUig==
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "6.2.1"
+
+"@fortawesome/free-solid-svg-icons@^6.2.1":
+  version "6.2.1"
+  resolved "https://registry.yarnpkg.com/@fortawesome/free-solid-svg-icons/-/free-solid-svg-icons-6.2.1.tgz#2290ea5adcf1537cbd0c43de6feb38af02141d27"
+  integrity sha512-oKuqrP5jbfEPJWTij4sM+/RvgX+RMFwx3QZCZcK9PrBDgxC35zuc7AOFsyMjMd/PIFPeB2JxyqDr5zs/DZFPPw==
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "6.2.1"
+
+"@fortawesome/react-fontawesome@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@fortawesome/react-fontawesome/-/react-fontawesome-0.2.0.tgz#d90dd8a9211830b4e3c08e94b63a0ba7291ddcf4"
+  integrity sha512-uHg75Rb/XORTtVt7OS9WoK8uM276Ufi7gCzshVWkUJbHhh3svsUUeqXerrM96Wm7fRiDzfKRwSoahhMIkGAYHw==
+  dependencies:
+    prop-types "^15.8.1"
+
 "@humanwhocodes/config-array@^0.11.6":
   version "0.11.7"
   resolved "https://registry.yarnpkg.com/@humanwhocodes/config-array/-/config-array-0.11.7.tgz#38aec044c6c828f6ed51d5d7ae3d9b9faf6dbb0f"
@@ -1407,6 +1440,18 @@ loose-envify@^1.1.0, loose-envify@^1.4.0:
   dependencies:
     js-tokens "^3.0.0 || ^4.0.0"
 
+lottie-react@^2.3.1:
+  version "2.3.1"
+  resolved "https://registry.yarnpkg.com/lottie-react/-/lottie-react-2.3.1.tgz#697060417bab027edb57ed45bda9d62e920d4040"
+  integrity sha512-8cxd6XZZtECT6LoAhCftRdYrEpHxiouvB5EPiYA+TtCG5LHNYAdMS9IVIHcxKtWnpo7x16QfCLj1XLXZpaN81A==
+  dependencies:
+    lottie-web "^5.9.4"
+
+lottie-web@^5.9.4:
+  version "5.10.0"
+  resolved "https://registry.yarnpkg.com/lottie-web/-/lottie-web-5.10.0.tgz#72563f22efdcf2b8f7e8359743514930ebaf5f8c"
+  integrity sha512-q2hfqKrGXNkwjSSZjKxf3fWMi0e3ZBc03qBkVWoGbwUJ7BcG+9YXjMPtmmhitzk8Nc6VQ5PRnh9yInPdfq0PZg==
+
 lru-cache@^6.0.0:
   version "6.0.0"
   resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-6.0.0.tgz#6d6fe6570ebd96aaf90fcad1dafa3b2566db3a94"
@@ -1643,6 +1688,11 @@ path-type@^4.0.0:
   resolved "https://registry.yarnpkg.com/path-type/-/path-type-4.0.0.tgz#84ed01c0a7ba380afe09d90a8c180dcd9d03043b"
   integrity sha512-gDKb8aZMDeD/tZWs9P6+q0J9Mwkdl6xMV8TjnGP3qJVJ06bdMgkbBlLU8IdfOsIsFz2BW1rNVT3XuNEl8zPAvw==
 
+performance-now@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/performance-now/-/performance-now-2.1.0.tgz#6309f4e0e5fa913ec1c69307ae364b4b377c9e7b"
+  integrity sha512-7EAHlyLHI56VEIdK57uwHdHKIaAGbnXPiw0yWbarQZOKaKpvUIgW0jWRVLiatnM+XXlSwsanIBH/hzGMJulMow==
+
 picocolors@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/picocolors/-/picocolors-1.0.0.tgz#cb5bdc74ff3f51892236eaf79d68bc44564ab81c"
@@ -1725,7 +1775,7 @@ prelude-ls@^1.2.1:
   resolved "https://registry.yarnpkg.com/prelude-ls/-/prelude-ls-1.2.1.tgz#debc6489d7a6e6b0e7611888cec880337d316396"
   integrity sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==
 
-prop-types@^15.8.1:
+prop-types@^15.6.2, prop-types@^15.8.1:
   version "15.8.1"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.8.1.tgz#67d87bf1a694f48435cf332c24af10214a3140b5"
   integrity sha512-oj87CgZICdulUohogVAR7AjlC0327U4el4L6eAvOqCeudMDVU0NThNaV+b9Df4dXgSP1gXMTnPdhfe/2qDH5cg==
@@ -1748,6 +1798,13 @@ quick-lru@^5.1.1:
   version "5.1.1"
   resolved "https://registry.yarnpkg.com/quick-lru/-/quick-lru-5.1.1.tgz#366493e6b3e42a3a6885e2e99d18f80fb7a8c932"
   integrity sha512-WuyALRjWPDGtt/wzJiadO5AXY+8hZ80hVpe6MyivgraREW751X3SbhRvG3eLKOYN+8VEvqLcf3wdnt44Z4S4SA==
+
+raf@^3.4.0:
+  version "3.4.1"
+  resolved "https://registry.yarnpkg.com/raf/-/raf-3.4.1.tgz#0742e99a4a6552f445d73e3ee0328af0ff1ede39"
+  integrity sha512-Sq4CW4QhwOHE8ucn6J34MqtZCeWFP2aQSmrlroYgqAV1PjStIhJXxYuTgUIfkEk7zTLjmIjLmU5q+fbD1NnOJA==
+  dependencies:
+    performance-now "^2.1.0"
 
 react-dom@18.2.0:
   version "18.2.0"
@@ -2081,6 +2138,14 @@ typescript@4.9.3:
   version "4.9.3"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.9.3.tgz#3aea307c1746b8c384435d8ac36b8a2e580d85db"
   integrity sha512-CIfGzTelbKNEnLpLdGFgdyKhG23CKdKgQPOBc+OUNrkJ2vr+KSzsSV5kq5iWhEQbok+quxgGzrAtGWCyU7tHnA==
+
+typewriter-effect@^2.19.0:
+  version "2.19.0"
+  resolved "https://registry.yarnpkg.com/typewriter-effect/-/typewriter-effect-2.19.0.tgz#396fe35e1313279ae6202775bf8dff5db37c5b64"
+  integrity sha512-rhUX1ukmAXNFWUnMFx8CDU1uLWJQ7pRYzDU7WfHJRq43i6SmWSP9vFiUsOGfXINodUAgZiJ5xnzwLciHxZDGDg==
+  dependencies:
+    prop-types "^15.6.2"
+    raf "^3.4.0"
 
 unbox-primitive@^1.0.2:
   version "1.0.2"
