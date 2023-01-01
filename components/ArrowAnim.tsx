@@ -14,5 +14,5 @@ export default function ArrowAnim() {
   };
   const { View: lottie } = useLottie(defaultOptions);
 
-  return <div className="w-16 h-16 mx-auto absolute bottom-6 left-0 right-0">{lottie}</div>;
+  return <div className="w-16 h-16 mx-auto absolute bottom-12 left-0 right-0">{lottie}</div>;
 }

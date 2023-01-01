@@ -10,7 +10,7 @@ export default function Hero({ innerRef }:any) {
         backgroundPosition: "center",
       }}
     >
-      <div className="text-white min-h-screen backdrop-blur flex justify-center items-center flex-col">
+      <div className="text-white min-h-screen px-2 backdrop-blur flex justify-center items-center flex-col">
         <p
           style={{ fontSize: "3rem" }}
           className=" text-white text-center font-semibold"
