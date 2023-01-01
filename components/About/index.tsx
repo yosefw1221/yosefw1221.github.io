@@ -9,7 +9,7 @@ export default function Index({innerRef}:any) {
         <div className="flex px-8 flex-col order-2 md:order-1">
           <p className="text-white hidden mb-4 md:block text-6xl font-semibold">About</p>
           <p>
-            👋 I&apos;m a self-orinated android and fullstack (backend heavy)
+            👋 I&apos;m a self-oriented android and fullstack (backend heavy)
             developer and i enjoy creating things that live on the internet. My
             interest in programming started back in high school when i started
             to learn java for android app development.
