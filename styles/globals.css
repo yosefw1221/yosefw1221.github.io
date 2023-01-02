@@ -4,6 +4,7 @@
 
 html {
   scroll-behavior: smooth;
+  width: 100%;
 }
 @layer utilities {
   .clip-path-circle {
