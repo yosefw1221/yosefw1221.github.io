@@ -20,6 +20,7 @@ export default function Home() {
     >
       <Head>
         <title>Yosefw | FullStack Developer</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta
           name="description"
           content="FullStack web and mobile app developer"
