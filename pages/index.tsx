@@ -16,7 +16,7 @@ export default function Home() {
   return (
     <div
       style={{ scrollBehavior: "smooth" }}
-      className="min-h-screen font-mono w-full flex flex-col bg-[#1a191d] scroll-smooth selection:bg-[#37e5] selection:text-white"
+      className="min-h-screen font-mono w-screen flex flex-col bg-[#1a191d] scroll-smooth selection:bg-[#37e5] selection:text-white"
     >
       <Head>
         <title>Yosefw | FullStack Developer</title>

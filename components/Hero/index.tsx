@@ -12,14 +12,14 @@ export default function Hero({ innerRef }:any) {
     >
       <div className="text-white min-h-screen px-2 backdrop-blur flex justify-center items-center flex-col">
         <p
-          style={{ fontSize: "3rem" }}
+          style={{ fontSize: "2.8rem" }}
           className=" text-white text-center font-semibold"
         >
           YOSEF WORKU
         </p>
         <p style={{ color: "#48f" }}>⎼⎼⎼⎼⎼⎼⎼⎼</p>
         <span
-          style={{ fontSize: "2rem" }}
+          style={{ fontSize: "1.8rem" }}
           className=" text-white text-center font-thin"
         >
           Android & FullStack Developer
