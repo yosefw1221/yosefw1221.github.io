@@ -1,6 +1,4 @@
-import {
-  faExternalLink,
-} from "@fortawesome/free-solid-svg-icons/faExternalLink";
+import { faExternalLink } from "@fortawesome/free-solid-svg-icons/faExternalLink";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 
@@ -43,7 +41,9 @@ export default function index({ innerRef }: any) {
             FullStack Developer
             <br />
             <ul className="selection:text-white pl-4 list-disc pt-2">
-              <li>I am responsible to develop and maintain features for one of the largest project <a className="text-blue-400" href='https://link.builders/'>Link.builders</a>, it a SEO professionals tool to track backlinks, provides a marketplace to buy and sell backlinks, analyze competitors backlinks, plan and execute link building strategies, and so much more   </li>
+              <li>I&apos;m responsible for developing new features.</li>
+              <li>Improving and maintaining existing features </li>
+              <li>Debugging and troubleshooting issues</li>
             </ul>
           </div>
         </li>
@@ -69,7 +69,6 @@ export default function index({ innerRef }: any) {
           <div className="text-base font-normal text-gray-500 dark:text-gray-400">
             Junior Software Developer
             <br />
-            
             <ol className="pl-4 list-disc pt-2">
               <li>
                 Being part of the team, I was responsible to setup CI/CD using
