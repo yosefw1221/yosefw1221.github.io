@@ -30,6 +30,7 @@ export default function Index({innerRef}:any) {
               <li>JavaScript (ES6+)</li>
               <li>Node.js</li>
               <li>MongoDB</li>
+              <li>Socket.io</li>
             </ol>
             <ol className="list-disc">
               <li>React</li>
