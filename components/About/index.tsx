@@ -33,6 +33,7 @@ export default function Index({innerRef}:any) {
               <li>Socket.io</li>
             </ol>
             <ol className="list-disc">
+              <li>Progressive WebApp (PWA)</li>
               <li>React</li>
               <li>Java</li>
               <li>Kotlin</li>
