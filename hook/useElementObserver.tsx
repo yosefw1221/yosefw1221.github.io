@@ -8,12 +8,9 @@ export default function useElementObserver() {
 
   const callback = (entries: any) => {
     const isIntersecting = entries[0].isIntersecting;
-    // if (timer.current) clearTimeout(timer.current);
     if (isIntersecting) {
-      // timer.current = setTimeout(() => {
         const hash = `#${entries[0].target.id}`;
         setActiveHash(hash);
-      // });
     }
   };
 

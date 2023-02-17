@@ -9,7 +9,7 @@ export default function NavBar({ active = "#" }: any) {
         <ul className="flex flex-row gap-4  md:gap-8 lg:gap-8 justify-center items-center font-light ">
           <MenuItem active={active} href="#" title="Home" />
           <MenuItem active={active} href="#about" title="About" />
-          <MenuItem active={active} href="#service" title="Service" />
+          <MenuItem active={active} href="#skill" title="Skill" />
           <MenuItem active={active} href="#project" title="Project" />
           <MenuItem active={active} href="#experience" title="Experience" />
           <li
@@ -43,8 +43,8 @@ export default function NavBar({ active = "#" }: any) {
               </a>
             </li>
             <li className="hover:text-blue-400 cursor-pointer hover:scale-105">
-              <a onClick={() => setIsOpen(false)} href="#service">
-                Service
+              <a onClick={() => setIsOpen(false)} href="#skill">
+                Skill
               </a>
             </li>
             <li className="hover:text-blue-400 cursor-pointer hover:scale-105">

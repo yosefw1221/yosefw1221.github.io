@@ -19,7 +19,7 @@ export default function Index({ innerRef }: any) {
   return (
     <section
       ref={innerRef}
-      id="service"
+      id="skill"
       style={{ background: "#4444", width: "100vw", paddingBottom: "3rem" }}
     >
       <div className=" max-w-screen-xl p-4 mx-auto">
@@ -27,7 +27,7 @@ export default function Index({ innerRef }: any) {
           style={{ fontSize: "4rem" }}
           className="font-semibold py-4 text-white font-sans"
         >
-          My Expertise
+          My Skills
         </p>
         <div className="grid lg:grid-cols-2 gap-6 flex-wrap">
           <Skill icon={faDesktop} title="Full Stack" color="#5533e4">
