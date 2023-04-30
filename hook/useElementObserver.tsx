@@ -1,4 +1,5 @@
 import React, { createRef, useEffect, useMemo, useRef, useState } from "react";
+import * as gtag from "../gtag";
 
 export default function useElementObserver() {
   const [sectionRefs, setSectionRefs] = useState<any>([useRef(null)]);
@@ -9,8 +10,14 @@ export default function useElementObserver() {
   const callback = (entries: any) => {
     const isIntersecting = entries[0].isIntersecting;
     if (isIntersecting) {
-        const hash = `#${entries[0].target.id}`;
-        setActiveHash(hash);
+      const hash = `#${entries[0].target.id}`;
+      gtag.event({
+        action: "scroll",
+        category: "scroll",
+        label: hash,
+        value: hash,
+      });
+      setActiveHash(hash);
     }
   };
 
