@@ -65,6 +65,10 @@ export default function Index({ innerRef }: any) {
                   <FontAwesomeIcon width={25} icon={faDatabase} />
                   <span>MySql</span>
                 </div>
+                <div className="flex gap-1 text-gray-200 items-center flex-col">
+                  <Image width={25} height={30} src='https://socket.io/images/logo-dark.svg' alt="firebase" />
+                  <span>Socket.io</span>
+                </div>
               </div>
             </>
           </Skill>
@@ -76,7 +80,7 @@ export default function Index({ innerRef }: any) {
               </p>
               <div className="flex flex-wrap items-baseline text-xs gap-6 mt-4">
                 <div className="flex gap-1 text-gray-200 items-center flex-col">
-                  <FontAwesomeIcon width={30} icon={faJava} />
+                  <FontAwesomeIcon width={30}  icon={faJava} />
                   <span>Java</span>
                 </div>
                 <div className="flex gap-1 text-gray-200 items-center flex-col">
