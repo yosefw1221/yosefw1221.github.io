@@ -87,17 +87,13 @@ export default function index({ innerRef }: any) {
         <li className="mb-10 ml-4">
           <div className="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"></div>
           <time className="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
-            May 2018 - Dec 2021
+            May 2018 - Dec 2021 (Self Employed)
           </time>
           <br />
           <a className="text-lg cursor-pointer hover:underline underline-offset-4 font-semibold text-blue-300 dark:text-white">
-            JoSystems {" "}
-            <FontAwesomeIcon
-              className="inline"
-              width={12}
-              icon={faExternalLink}
-            />
+            JoSystems{" "}
           </a>
+          
           <div className="text-base font-normal text-gray-500 dark:text-gray-400">
             Android Developer
             <br />
