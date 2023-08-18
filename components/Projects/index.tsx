@@ -20,7 +20,7 @@ export default function Index({ innerRef, title }: IProjectsProps) {
 
   useEffect(() => {
     (async () => {
-      const { data, docs } = await fetchProjects(1);
+      const { data, docs } = await fetchProjects(3);
       const { data: total } = await getProjectCount();
       if (!docs || !total) return;
       setProjects(data);
@@ -30,7 +30,7 @@ export default function Index({ innerRef, title }: IProjectsProps) {
   }, []);
 
   const fetchMoreProjects = async () => {
-    const { data, docs } = await fetchProjects(1, lastProjectRef.current);
+    const { data, docs } = await fetchProjects(3, lastProjectRef.current);
     if (!docs) return;
     lastProjectRef.current = docs[docs.length - 1];
     setProjects((prev) => [...prev, ...data]);
