@@ -1,31 +1,34 @@
-import "../styles/globals.css";
-import type { AppProps } from "next/app";
-import { useRouter } from "next/router"
-import Script from "next/script"
-import { useEffect } from "react"
-import * as gtag from "../gtag"
+import React from 'react';
+import '../styles/globals.css';
+import type { AppProps } from 'next/app';
+import { useRouter } from 'next/router';
+import Script from 'next/script';
+import { useEffect } from 'react';
+import * as gtag from '../gtag';
+import Layout from '@layout/index';
+import defaultContent from '@firebase/content/default-content';
 
 export default function App({ Component, pageProps }: AppProps) {
-  const router = useRouter()
+  const router = useRouter();
   useEffect(() => {
-    const handleRouteChange = (url:String) => {
-      gtag.pageview(url)
-    }
-    router.events.on("routeChangeComplete", handleRouteChange)
+    const handleRouteChange = (url: String) => {
+      gtag.pageview(url);
+    };
+    router.events.on('routeChangeComplete', handleRouteChange);
     return () => {
-      router.events.off("routeChangeComplete", handleRouteChange)
-    }
-  }, [router.events])
+      router.events.off('routeChangeComplete', handleRouteChange);
+    };
+  }, [router.events]);
 
   return (
     <>
       <Script
-        strategy="afterInteractive"
+        strategy='afterInteractive'
         src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
       />
       <Script
-        id="gtag-init"
-        strategy="afterInteractive"
+        id='gtag-init'
+        strategy='afterInteractive'
         dangerouslySetInnerHTML={{
           __html: `
             window.dataLayer = window.dataLayer || [];
@@ -37,7 +40,11 @@ export default function App({ Component, pageProps }: AppProps) {
           `,
         }}
       />
-      <Component {...pageProps} />
+      <Layout
+        findMeOn={pageProps.contents?.findMeOn || defaultContent.findMeOn}
+      >
+        <Component {...pageProps} />
+      </Layout>
     </>
-  )
+  );
 }

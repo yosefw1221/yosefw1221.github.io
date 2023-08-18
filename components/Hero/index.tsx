@@ -1,31 +1,36 @@
-import ArrowAnim from "../ArrowAnim";
+import { IHero } from 'types';
+import ArrowAnim from '../ArrowAnim';
+import { LegacyRef } from 'react';
 
-export default function Hero({ innerRef }:any) {
+type IHeroProps = {
+  innerRef: LegacyRef<HTMLDivElement>;
+  content: IHero;
+};
+export default function Hero({ innerRef, content }: IHeroProps) {
   return (
-    <div
+    <section
       ref={innerRef}
       style={{
-        backgroundImage: `url(bg.jpg)`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
+        backgroundImage: content.background,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
       }}
     >
-      <div className="text-white min-h-screen px-2 backdrop-blur flex justify-center items-center flex-col">
-        <p
-          style={{ fontSize: "2.8rem" }}
-          className=" text-white text-center font-semibold"
-        >
-          YOSEF WORKU
-        </p>
-        <p style={{ color: "#48f" }}>⎼⎼⎼⎼⎼⎼⎼⎼</p>
-        <span
-          style={{ fontSize: "1.8rem" }}
-          className=" text-white text-center font-thin"
-        >
-          Android & FullStack Developer
-        </span>
+      <div className='text-white min-h-screen px-2 backdrop-blur flex justify-center items-center flex-col'>
+        <div
+          style={{ fontSize: '4rem' }}
+          className=' text-white text-center font-semibold'
+          dangerouslySetInnerHTML={{ __html: content.title }}
+        />
+        <span className='w-46 h-[1.5px] mb-2  bg-[#4d85e6]' />
+        <div
+          style={{ fontSize: '1.8rem' }}
+          className=' text-white text-center font-thin'
+          dangerouslySetInnerHTML={{ __html: content.subtitle }}
+        />
+
         <ArrowAnim />
       </div>
-    </div>
+    </section>
   );
 }

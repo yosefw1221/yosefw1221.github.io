@@ -1,3 +1,4 @@
+import React from 'react';
 import { faLinkedin } from "@fortawesome/free-brands-svg-icons/faLinkedin";
 import { faGoogle } from "@fortawesome/free-brands-svg-icons/faGoogle";
 import { faGithub } from "@fortawesome/free-brands-svg-icons/faGithub";
