@@ -1,9 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@layer base {
+  h1 {
+    @apply text-4xl font-bold leading-loose;
+  }
 
+  h2 {
+    @apply text-2xl font-bold leading-loose;
+  }
+
+  h3 {
+    @apply text-xl font-semibold leading-loose;
+  }
+  strong {
+    @apply font-bold;
+  }
+}
 html {
-  scroll-behavior: smooth;
+  font-family: 'Montserrat Alternates', sans-serif !important;
+  scroll-behavior: smooth !important;
   width: 100%;
 }
 @layer utilities {
