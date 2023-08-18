@@ -3,13 +3,14 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    remotePatterns: [{
-      protocol: 'https',
-      port: '',
-      pathname: '/images/**',
-      hostname:'socket.io'
-    }]
-  }
-}
+    remotePatterns: [
+      {
+        protocol: 'https',
+        pathname: '/**',
+        hostname: 'firebasestorage.googleapis.com',
+      },
+    ],
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

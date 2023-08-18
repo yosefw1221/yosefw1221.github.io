@@ -1,6 +1,6 @@
 import React from "react";
 import { useLottie } from "lottie-react";
-import animation from '../public/scroll-down-hint.json'
+import animation from '@public/images/scroll-down-hint.json'
 
 
 export default function ArrowAnim() {
