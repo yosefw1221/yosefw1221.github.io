@@ -5,3 +5,9 @@ export const firebaseConfig = {
   appId: String(process.env.NEXT_PUBLIC_FIREBASE_APP_ID),
   measurementId: String(process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID),
 };
+
+export const emailJsConfig = {
+  serviceId: String(process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID),
+  templateId: String(process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID),
+  publicKey: String(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY),
+};
