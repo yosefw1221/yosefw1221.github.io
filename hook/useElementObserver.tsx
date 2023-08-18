@@ -1,22 +1,17 @@
-import React, { createRef, useEffect, useMemo, useRef, useState } from "react";
-import * as gtag from "../gtag";
-
-export default function useElementObserver() {
+import { createRef, useEffect, useRef, useState } from 'react';
+export default function useElementObserver(size: number) {
   const [sectionRefs, setSectionRefs] = useState<any>([useRef(null)]);
-  const [activeHash, setActiveHash] = useState("#");
-  const [size, setSize] = useState(1);
+  const [activeHash, setActiveHash] = useState('#');
   const timer = useRef<any>(null);
 
   const callback = (entries: any) => {
     const isIntersecting = entries[0].isIntersecting;
+    clearTimeout(timer.current);
     if (isIntersecting) {
       const hash = `#${entries[0].target.id}`;
-      gtag.event({
-        action: "scroll",
-        category: "scroll",
-        label: hash,
-        value: hash,
-      });
+      timer.current = setTimeout(() => {
+        location.hash = hash;
+      }, 200);
       setActiveHash(hash);
     }
   };
@@ -42,5 +37,5 @@ export default function useElementObserver() {
     };
   }, [sectionRefs]);
 
-  return [setSize, sectionRefs, activeHash];
+  return [sectionRefs, activeHash];
 }
