@@ -153,7 +153,7 @@ const defaultContent = {
     },
     {
       name: 'Telegram',
-      link: 'https://t.me/josefworku',
+      link: 'https://t.me/yosefw1221',
       icon: '/icons/telegram.svg',
     },
   ],
