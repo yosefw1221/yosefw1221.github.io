@@ -20,11 +20,12 @@ export default function PortfolioCard({
 }: PortfolioCardProps) {
   return (
     <div className='group text-white flex hover:drop-shadow-lg duration-500 transition-all hover:scale-105 flex-col max-w-sm m-3 bg-neutral-800 rounded-md drop-shadow-sm p-2 shadow-black'>
-      <div className='w-full h-48' >
+      <div className='w-full max-h-48' >
         <Image
-          className='rounded-t-md max-h-48 self-center object-cover'
+          className='rounded-t-md self-center '
           src={image}
-          fill
+          height={300}
+          width={500}
           alt={title}
         />
       </div>
