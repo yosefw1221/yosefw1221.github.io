@@ -13,7 +13,7 @@ export default function NavBar({ content, active }: IProps) {
 
   return (
     <nav>
-      <div className='fixed top-0 left-6 right-6 invisible z-10 md:visible bg-sky-200 backdrop-blur-sm select-none m-8 bg-opacity-50 drop-shadow-sm p-6 rounded-full max-w-screen-lg mx-auto '>
+      <div className='fixed top-0 left-6 right-6 invisible z-10 lg:visible bg-sky-200 backdrop-blur-sm select-none m-8 bg-opacity-50 drop-shadow-sm p-6 rounded-full max-w-screen-lg mx-auto '>
         <ul className='flex flex-row gap-4  md:gap-4 lg:gap-8 justify-center items-center font-light '>
           {content.map(({ link, title }) => (
             <MenuItem
@@ -32,7 +32,7 @@ export default function NavBar({ content, active }: IProps) {
         </ul>
       </div>
       {/* // for small device */}
-      <div className='fixed md:hidden z-10 flex flex-col top-0 left-0 right-0'>
+      <div className='fixed lg:hidden z-10 flex flex-col top-0 left-0 right-0'>
         <HamburgerIcon
           isOpen={isOpen}
           className='z-20 p-8'

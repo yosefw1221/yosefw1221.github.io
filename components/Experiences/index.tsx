@@ -12,7 +12,7 @@ export default function Index({ innerRef, content, title }: IProps) {
     <div
       ref={innerRef}
       id='experience'
-      className='grid md:grid-cols-2 max-w-screen-xl mx-auto my-32 px-6 text-justify text-white place-items-center gap-4'
+      className='grid lg:grid-cols-2 max-w-screen-xl mx-auto my-32 px-6 text-justify text-white place-items-center gap-4'
     >
       <span
         style={{ lineHeight: '4rem' }}
