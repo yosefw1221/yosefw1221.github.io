@@ -9,7 +9,7 @@ export default function Footer({ findMeOn }: { findMeOn: ISocialLink[] }) {
         <p className=' font-extralight text-white mb-2 text-sm'>Find me on</p>
         <ul className='flex flex-row gap-4 text-white'>
           {findMeOn?.map((link) => (
-            <Link key={link.name} href={link.link}>
+            <Link key={link.name} href={link.link} target='_blank'>
               <Image width={18} height={18} src={link.icon} alt={link.name} />
             </Link>
           ))}
