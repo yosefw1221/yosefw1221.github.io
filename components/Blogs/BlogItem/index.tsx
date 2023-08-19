@@ -2,6 +2,7 @@ import React from 'react';
 import faLink from '@public/icons/faLink.svg';
 import Image, { StaticImageData } from 'next/image';
 import Link from 'next/link';
+import { IBlog } from 'types';
 
 type BlogProps = {
   slug: string;
@@ -12,13 +13,13 @@ type BlogProps = {
 };
 
 export default function BlogItem({
-  slug,
+  id,
   title,
   thumbnail,
   tags,
-  titleStyle,
+  readTime,
   ...rest
-}: BlogProps) {
+}: IBlog) {
   return (
     <div
       {...rest}
@@ -38,7 +39,7 @@ export default function BlogItem({
         <div className='flex justify-center gap-2 flex-wrap mx-6'>
           {tags.map((tag) => (
             <span
-              className='bg-blue-500 select-none hover:bg-blue-600 py-1 rounded-full px-2.5 text-xs text-white'
+              className='border-gray-500 border select-none py-1 rounded-full px-2.5 text-xs text-gray-300'
               key={tag}
             >
               #{tag}
@@ -46,7 +47,7 @@ export default function BlogItem({
           ))}
         </div>
       )}
-      <Link href={`/blogs/${slug}`}>
+      <Link href={`/blogs/${id}`}>
         <div className='hidden group-hover:flex gap-1 justify-center cursor-pointer absolute items-center  top-0 bottom-0 rounded-md left-0 right-0 p-6 bg-blue-500 opacity-30 transition-all backdrop-blur-xs'>
           <Image width={32} src={faLink} alt='read more' />
           {'Read More'}

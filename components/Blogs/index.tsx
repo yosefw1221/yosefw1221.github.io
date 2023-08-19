@@ -39,14 +39,14 @@ export default function Blogs({ innerRef, title }: any) {
           className='font-bold pb-6 text-6xl text-white'
           dangerouslySetInnerHTML={{ __html: title }}
         />
-        <div className='grid md:grid-cols-2 items-stretch justify-center lg:grid-cols-3 gap-6 flex-wrap' suppressHydrationWarning>
+        <div
+          className='grid md:grid-cols-2 items-stretch justify-center lg:grid-cols-3 gap-6 flex-wrap'
+          suppressHydrationWarning
+        >
           {blogs.map((blog) => (
             <Blog
               key={blog.id}
-              thumbnail={blog.thumbnail}
-              slug={blog.id}
-              tags={blog.tags}
-              title={blog.title}
+              {...blog}
             />
           ))}
         </div>
