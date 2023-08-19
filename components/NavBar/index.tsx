@@ -1,28 +1,16 @@
 import React from 'react';
 import Link from 'next/link';
 import HamburgerIcon from '../../components/HambergerIcon';
-import { useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
+import { useState } from 'react';
 import { INavItem } from 'types';
 
-export default function NavBar({ content }: { content: INavItem[] }) {
+type IProps = {
+  content: INavItem[];
+  active: string;
+};
+export default function NavBar({ content, active }: IProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const [active, setActive] = useState('/#');
 
-  const router = useRouter();
-
-  const handleRouteChange = () => {
-    const { hash, pathname = '/' } = location || {};
-    setActive(() => `${pathname}${hash}`);
-  };
-
-  useEffect(() => {
-    handleRouteChange();
-    window.addEventListener('hashchange', handleRouteChange);
-    return () => {
-      window.removeEventListener('hashchange', handleRouteChange);
-    };
-  }, [router.events]);
 
   return (
     <nav>
@@ -45,7 +33,7 @@ export default function NavBar({ content }: { content: INavItem[] }) {
         </ul>
       </div>
       {/* // for small device */}
-      <div className='absolute md:hidden flex flex-col top-0 left-0 right-0'>
+      <div className='fixed md:hidden z-10 flex flex-col top-0 left-0 right-0'>
         <HamburgerIcon
           isOpen={isOpen}
           className='z-20 p-8'
@@ -60,14 +48,20 @@ export default function NavBar({ content }: { content: INavItem[] }) {
             {content.map(({ link, title }) => (
               <li
                 key={link}
-                className='hover:text-blue-400 cursor-pointer hover:scale-105'
+                className={`hover:text-blue-400 cursor-pointer hover:scale-105 ${
+                  link === active ? 'font-semibold text-blue-500' : ''
+                }`}
               >
                 <Link onClick={() => setIsOpen(false)} href={link}>
                   {title}
                 </Link>
               </li>
             ))}
-            <li className='hover:text-blue-400 cursor-pointer hover:scale-105 border-blue-500 border rounded-full px-4 py-2'>
+            <li
+              className={`${
+                '/#contact' === active ? 'font-semibold' : ''
+              }hover:text-blue-400 cursor-pointer hover:scale-105 border-blue-500 border rounded-full px-4 py-2`}
+            >
               <Link href='#contact'>Let&apos;s Talk</Link>
             </li>
           </ul>

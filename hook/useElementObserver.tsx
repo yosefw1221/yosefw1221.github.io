@@ -2,18 +2,11 @@ import { createRef, useEffect, useRef, useState } from 'react';
 export default function useElementObserver(size: number) {
   const [sectionRefs, setSectionRefs] = useState<any>([useRef(null)]);
   const [activeHash, setActiveHash] = useState('#');
-  const timer = useRef<any>(null);
 
   const callback = (entries: any) => {
     const isIntersecting = entries[0].isIntersecting;
-    clearTimeout(timer.current);
-    if (isIntersecting) {
-      const hash = `#${entries[0].target.id}`;
-      timer.current = setTimeout(() => {
-        location.hash = hash;
-      }, 200);
-      setActiveHash(hash);
-    }
+    const hash = `/#${entries[0].target.id}`;
+    if (isIntersecting) setActiveHash(hash);
   };
 
   useEffect(() => {
@@ -23,7 +16,7 @@ export default function useElementObserver(size: number) {
 
   useEffect(() => {
     const observer = new IntersectionObserver(callback, {
-      threshold: 0.7,
+      threshold: 0.5,
       root: null,
     });
     sectionRefs.forEach((element: any) => {

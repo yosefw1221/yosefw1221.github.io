@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Hero from '@components/Hero';
 import Skills from '@components/Skills';
 import About from '@components/About';
-import Works from '@components/Projects';
+import Projects from '@components/Projects';
 import Experiences from '@components/Experiences';
 import useElementObserver from '@hook/useElementObserver';
 import Blogs from '@components/Blogs';
@@ -14,8 +14,7 @@ import { IContents } from 'types';
 import NavBar from '@components/NavBar';
 
 export default function Home({ contents }: { contents: IContents }) {
-  const [refs] = useElementObserver(7);
-
+  const [refs, activeHash] = useElementObserver(8);
   return (
     <div
       style={{ scrollBehavior: 'smooth' }}
@@ -27,7 +26,7 @@ export default function Home({ contents }: { contents: IContents }) {
         <meta name='description' content={contents.head.description} />
         <link rel='icon' href='/favicon.ico' />
       </Head>
-      <NavBar content={contents.nav} />
+      <NavBar active={activeHash} content={contents.nav} />
       <Hero innerRef={refs[0]} content={contents.hero} />
       <Blogs innerRef={refs[1]} title={contents.headlines.blog} />
       <About
@@ -40,12 +39,14 @@ export default function Home({ contents }: { contents: IContents }) {
         content={contents.skills}
         title={contents.headlines.skills}
       />
-      <Works innerRef={refs[4]} title={contents.headlines.projects} />
+
+      <Projects innerRef={refs[4]} title={contents.headlines.projects} />
       <Experiences
         innerRef={refs[5]}
         content={contents.experiences}
         title={contents.headlines.experience}
       />
+
       <Contact innerRef={refs[6]} title={contents.headlines.contact} />
     </div>
   );
