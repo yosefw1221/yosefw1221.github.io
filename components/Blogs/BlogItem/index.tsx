@@ -1,16 +1,8 @@
 import React from 'react';
 import faLink from '@public/icons/faLink.svg';
-import Image, { StaticImageData } from 'next/image';
+import Image from 'next/image';
 import Link from 'next/link';
 import { IBlog } from 'types';
-
-type BlogProps = {
-  slug: string;
-  title: string;
-  titleStyle?: string;
-  thumbnail?: string | StaticImageData;
-  tags?: string[];
-};
 
 export default function BlogItem({
   id,
@@ -18,11 +10,9 @@ export default function BlogItem({
   thumbnail,
   tags,
   readTime,
-  ...rest
 }: IBlog) {
   return (
     <div
-      {...rest}
       className='group text-white flex hover:drop-shadow-lg duration-500 transition-all hover:scale-105 flex-col max-w-sm m-3 bg-neutral-800 rounded-md drop-shadow-sm p-2 shadow-black'
     >
       {thumbnail && (

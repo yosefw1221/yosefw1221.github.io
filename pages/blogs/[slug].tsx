@@ -5,7 +5,7 @@ import faArrowLeft from '@public/icons/faArrowLeft.svg';
 import { IBlog } from 'types';
 import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { materialDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import materialDark from 'react-syntax-highlighter/dist/cjs/styles/prism/material-dark';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
 import Link from 'next/link';
@@ -20,9 +20,9 @@ export default function BlogDetail({ blog }: { blog: IBlog }) {
       >
         <Image alt='home' width={20} height={20} src={faArrowLeft} />
       </Link>
-      <h1 className='text-white  text-6xl font-bold mx-auto'>{blog.title}</h1>
+      <h1 className='text-white  text-6xl font-bold mx-auto'>{blog?.title}</h1>
       <div className='flex gap-2 flex-wrap'>
-        {blog.tags?.map((tag) => (
+        {blog?.tags?.map((tag) => (
           <span
             className='border-gray-500 border select-none py-1 rounded-full px-2.5 text-xs text-gray-300'
             key={tag}
@@ -33,7 +33,7 @@ export default function BlogDetail({ blog }: { blog: IBlog }) {
       </div>
       <span className='text-blue-300 flex items-center gap-2 opacity-70 ml-2 text-sm text-left font-semibold '>
         <Image alt='home' width={15} height={15} src={faClock} />
-        {blog.createdAt} {` - ${blog.readTime} min read`}
+        {blog?.createdAt} {` - ${blog?.readTime} min read`}
       </span>
 
       <div className='text-white mt-2 mb-12 text-lg font-light text-justify'>
@@ -73,7 +73,7 @@ export default function BlogDetail({ blog }: { blog: IBlog }) {
             },
           }}
         >
-          {blog.content.replace(/\\n/g, '\n')}
+          {blog?.content.replace(/\\n/g, '\n')}
         </ReactMarkdown>
       </div>
     </div>
@@ -93,6 +93,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const paths = data.map((blog) => ({ params: { slug: blog.id } }));
   return {
     paths,
-    fallback: false,
+    fallback: true,
   };
 };
