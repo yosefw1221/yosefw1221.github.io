@@ -14,13 +14,12 @@ export default function Index({ innerRef, content, title }: IProps) {
       id='skills'
       style={{ background: '#4444', width: '100vw', paddingBottom: '3rem' }}
     >
-      <div className=' max-w-screen-xl p-4 mx-auto'>
+      <div className='max-w-screen-xl p-4 mx-auto'>
         <span
-          style={{ fontSize: '4rem' }}
-          className='font-semibold py-4 text-white'
+          className='font-semibold py-4 text-5xl md:text-6xl text-white'
           dangerouslySetInnerHTML={{ __html: title }}
         />
-        <div className='grid lg:grid-cols-2 gap-6 flex-wrap'>
+        <div className='grid pt-6 lg:grid-cols-2 gap-6 flex-wrap'>
           {content.map((skill) => (
             <Item {...skill} key={skill.title} />
           ))}

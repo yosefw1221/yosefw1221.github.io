@@ -40,7 +40,7 @@ export default function Index({ innerRef, title }: IProjectsProps) {
     <section ref={innerRef} id='projects' className='mb-8'>
       <div className=' max-w-screen-xl p-4 mx-auto flex flex-col'>
         <div
-          className='font-semibold py-4 text-6xl text-white'
+          className='font-semibold py-4 text-5xl md:text-6xl text-white'
           dangerouslySetInnerHTML={{ __html: title }}
         />
         <div className='grid md:grid-cols-2 items-stretch justify-center lg:grid-cols-3 gap-6 flex-wrap'>

@@ -36,7 +36,7 @@ export default function Blogs({ innerRef, title }: any) {
     <section ref={innerRef} id='blogs' className='mt-16'>
       <div className='max-w-screen-xl p-4 mx-auto flex flex-col'>
         <div
-          className='font-bold pb-6 text-6xl text-white'
+          className='font-bold pb-6 text-5xl md:text-6xl text-white'
           dangerouslySetInnerHTML={{ __html: title }}
         />
         <div

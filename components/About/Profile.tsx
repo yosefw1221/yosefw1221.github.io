@@ -14,5 +14,5 @@ export default function Profile() {
   };
   const { View: lottie } = useLottie(defaultOptions);
 
-  return <div className="w-96 h-96">{lottie}</div>;
+  return <div className="w-80">{lottie}</div>;
 }

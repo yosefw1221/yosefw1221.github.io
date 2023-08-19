@@ -16,7 +16,7 @@ export default function Index({ innerRef, content, title }: IProps) {
     >
       <span
         style={{ lineHeight: '4rem' }}
-        className='font-semibold text-center text-6xl py-4 text-white'
+        className='font-semibold text-center text-5xl md:text-6xl py-4 text-white overflow-wrap break-words'
         dangerouslySetInnerHTML={{ __html: title }}
       />
       <ol className='relative border-l border-gray-200 dark:border-gray-700'>

@@ -11,11 +11,10 @@ type IProps = {
 export default function NavBar({ content, active }: IProps) {
   const [isOpen, setIsOpen] = useState(false);
 
-
   return (
     <nav>
       <div className='fixed top-0 left-6 right-6 invisible z-10 md:visible bg-sky-200 backdrop-blur-sm select-none m-8 bg-opacity-50 drop-shadow-sm p-6 rounded-full max-w-screen-lg mx-auto '>
-        <ul className='flex flex-row gap-4  md:gap-8 lg:gap-8 justify-center items-center font-light '>
+        <ul className='flex flex-row gap-4  md:gap-4 lg:gap-8 justify-center items-center font-light '>
           {content.map(({ link, title }) => (
             <MenuItem
               key={link}
@@ -28,7 +27,7 @@ export default function NavBar({ content, active }: IProps) {
             className='border-[1.5px] bg-blue-500 border-blue-500 hover:scale-105 transition-all cursor-pointer rounded-full px-4 py-2
         absolute right-12 text-white drop-shadow-md'
           >
-            <Link href='#contact'>Let&apos;s Talk</Link>
+            <Link className={`${'/#contact' === active ? 'animate-pulse' : ''}`} href='#contact'>Let&apos;s Talk</Link>
           </li>
         </ul>
       </div>
@@ -58,11 +57,14 @@ export default function NavBar({ content, active }: IProps) {
               </li>
             ))}
             <li
-              className={`${
-                '/#contact' === active ? 'font-semibold' : ''
-              }hover:text-blue-400 cursor-pointer hover:scale-105 border-blue-500 border rounded-full px-4 py-2`}
+              className={`hover:text-blue-400 cursor-pointer hover:scale-105 border-blue-500 border rounded-full px-4 py-2`}
             >
-              <Link href='#contact'>Let&apos;s Talk</Link>
+              <Link
+                className={`${'/#contact' === active ? 'font-bold' : ''}`}
+                href='#contact'
+              >
+                Let&apos;s Talk
+              </Link>
             </li>
           </ul>
         </div>

@@ -17,11 +17,14 @@ export default function ContactMe({ innerRef, title }: IProps) {
     <section ref={innerRef} id='contact'>
       <div className='flex flex-col items-center mx-auto px-4 py-6 bg-[#4444]'>
         <div
-          className='font-semibold text-center text-6xl py-4 text-white'
+          className='font-semibold text-center text-5xl md:text-6xl py-4 text-white'
           dangerouslySetInnerHTML={{ __html: title }}
         />
         <form onSubmit={sendMessage(setStatus)}>
-          <fieldset className='flex flex-col w-96' disabled={status.success}>
+          <fieldset
+            className='flex flex-col w-80 md:w-96'
+            disabled={status.success}
+          >
             <FormItem
               label='Your Name'
               id='Name'
