@@ -27,7 +27,12 @@ export default function NavBar({ content, active }: IProps) {
             className='border-[1.5px] bg-blue-500 border-blue-500 hover:scale-105 transition-all cursor-pointer rounded-full px-4 py-2
         absolute right-12 text-white drop-shadow-md'
           >
-            <Link className={`${'/#contact' === active ? 'animate-pulse' : ''}`} href='#contact'>Let&apos;s Talk</Link>
+            <Link
+              className={`${'/#contact' === active ? 'animate-pulse' : ''}`}
+              href='#contact'
+            >
+              Let&apos;s Talk
+            </Link>
           </li>
         </ul>
       </div>
@@ -43,7 +48,11 @@ export default function NavBar({ content, active }: IProps) {
             isOpen ? 'clip-path-circle-active' : 'clip-path-circle'
           } w-full h-screen absolute top-0 text-white flex flex-col`}
         >
-          <ul className='flex justify-center  h-full items-center uppercase flex-col gap-6'>
+          <ul
+            className={`${
+              isOpen ? 'opacity-100' : 'opacity-0'
+            } flex justify-center transition-opacity duration-200 delay-200 h-full items-center uppercase flex-col gap-6`}
+          >
             {content.map(({ link, title }) => (
               <li
                 key={link}

@@ -15,7 +15,7 @@ export default function useElementObserver(size: number) {
   }, [size]);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(callback, { threshold: 0.5 });
+    const observer = new IntersectionObserver(callback, { threshold: 0.3 });
     sectionRefs.forEach((element: any) => {
       if (element?.current) observer.observe(element.current);
     });

@@ -59,7 +59,7 @@ export default function Index({ innerRef, title }: IProjectsProps) {
         {(gettingProject && (
           <span
             className={`${
-              !projects?.length ? 'h-96' : ''
+              !projects?.length ? 'h-[30rem]' : ''
             } flex items-center justify-center`}
           >
             <Loading />
