@@ -20,7 +20,9 @@ export default function BlogDetail({ blog }: { blog: IBlog }) {
       >
         <Image alt='home' width={20} height={20} src={faArrowLeft} />
       </Link>
-      <h1 className='text-white  text-5xl md:text-6xl font-bold mx-auto'>{blog?.title}</h1>
+      <h1 className='text-white  text-5xl md:text-6xl font-bold mx-auto'>
+        {blog?.title}
+      </h1>
       <div className='flex gap-2 flex-wrap'>
         {blog?.tags?.map((tag) => (
           <span
@@ -94,6 +96,5 @@ export const getStaticPaths: GetStaticPaths = async () => {
   return {
     paths,
     fallback: true,
-    revalidate: 3600,
   };
 };
