@@ -15,7 +15,6 @@ import NavBar from '@components/NavBar';
 
 export default function Home({ contents }: { contents: IContents }) {
   const [refs] = useElementObserver(7);
-  console.log(contents);
 
   return (
     <div

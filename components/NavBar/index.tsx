@@ -13,7 +13,6 @@ export default function NavBar({ content }: { content: INavItem[] }) {
 
   const handleRouteChange = () => {
     const { hash, pathname = '/' } = location || {};
-    console.log(hash, pathname);
     setActive(() => `${pathname}${hash}`);
   };
 
@@ -23,7 +22,7 @@ export default function NavBar({ content }: { content: INavItem[] }) {
     return () => {
       window.removeEventListener('hashchange', handleRouteChange);
     };
-  }, [router]);
+  }, [router.events]);
 
   return (
     <nav>

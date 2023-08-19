@@ -6,7 +6,6 @@ export const getContents = async () => {
   try {
     const contentRef = doc(CMSCollection, 'contents');
     const contentDoc = (await getDoc(contentRef))?.data();
-    console.log(contentDoc);
     return contentDoc || defaultContent;
   } catch (error) {
     return defaultContent;

@@ -13,9 +13,7 @@ export const useProjects = () => {
     async (pageSize = 3, cursor?: DocumentSnapshot<IProject>) => {
       try {
         setGettingProject(() => true);
-        const { data, docs } = await getProjects(pageSize, cursor);
-        console.log('data', data);
-        
+        const { data, docs } = await getProjects(pageSize, cursor);        
         setGettingProject(() => false);
         return { data, docs };
       } catch (error) {

@@ -8,7 +8,6 @@ import {
 import { IBlog, IContents, IProject } from 'types';
 import { firebaseConfig } from '@utils/config';
 
-console.log(firebaseConfig);
 export const app = initializeApp(firebaseConfig);
 
 
