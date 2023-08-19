@@ -22,7 +22,7 @@ export default function Index({ innerRef, content, title }: IProps) {
         />
         <div className='grid lg:grid-cols-2 gap-6 flex-wrap'>
           {content.map((skill) => (
-            <Item {...skill} key={Math.random()} />
+            <Item {...skill} key={skill.title} />
           ))}
         </div>
       </div>
