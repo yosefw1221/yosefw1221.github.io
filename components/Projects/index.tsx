@@ -56,7 +56,16 @@ export default function Index({ innerRef, title }: IProjectsProps) {
             />
           ))}
         </div>
-        {gettingProject && <Loading />}
+        {(gettingProject && (
+          <span
+            className={`${
+              !projects?.length ? 'h-96' : ''
+            } flex items-center justify-center`}
+          >
+            <Loading />
+          </span>
+        )) ||
+          null}
         {hasMoreProjects && (
           <button
             disabled={gettingProject}
