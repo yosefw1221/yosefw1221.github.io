@@ -22,6 +22,7 @@ export default function Home({ contents }: { contents: IContents }) {
     >
       <Head>
         <title>{contents.head.title}</title>
+        <meta name="google-site-verification" content="uDoMyg4bJFxTgilmeyuQw61M9zR4_yxFvu448DYzo0Y" />
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
         <meta name='description' content={contents.head.description} />
         <link rel='icon' href='/favicon.ico' />
