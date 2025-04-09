@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Head from 'next/head';
 import Hero from '@components/Hero';
 import Skills from '@components/Skills';
@@ -10,21 +10,31 @@ import Blogs from '@components/Blogs';
 import Contact from '@components/Contact-me';
 import { GetStaticProps } from 'next';
 import { getContents } from '@firebase/content';
-import { IContents } from 'types';
+import { IContents, ISocialLink } from 'types';
 import NavBar from '@components/NavBar';
+import dynamic from 'next/dynamic';
 
-export default function Home({ contents }: { contents: IContents }) {
+const ThemeToggle = dynamic(() => import('@components/ThemeToggle'), { ssr: false });
+
+export default function Home({ contents, findMeOn }: { contents: IContents, findMeOn: ISocialLink[] }) {
   const [refs, activeHash] = useElementObserver(8);
+  
+  useEffect(() => {
+    // Add dark-theme class to body by default
+    document.body.classList.add('dark-theme');
+  }, []);
+  
   return (
     <div
       style={{ scrollBehavior: 'smooth' }}
-      className='min-h-screen w-screen flex flex-col bg-[#1a191d] scroll-smooth selection:bg-[#37e5] selection:text-white'
+      className='min-h-screen w-full flex flex-col theme-bg-primary scroll-smooth selection:bg-blue-500/40 selection:text-white'
     >
       <Head>
         <title>{contents.head.title}</title>
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
         <meta name='description' content={contents.head.description} />
         <link rel='icon' href='/favicon.ico' />
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
       </Head>
       <NavBar active={activeHash} content={contents.nav} />
       <Hero innerRef={refs[0]} content={contents.hero} />
@@ -46,8 +56,10 @@ export default function Home({ contents }: { contents: IContents }) {
         content={contents.experiences}
         title={contents.headlines.experience}
       />
-
-      <Contact innerRef={refs[6]} title={contents.headlines.contact} />
+      <Contact findMeOn={findMeOn} innerRef={refs[6]} title={contents.headlines.contact} />
+      
+      {/* Theme toggle component */}
+      <ThemeToggle />
     </div>
   );
 }

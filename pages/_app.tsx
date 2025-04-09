@@ -40,10 +40,11 @@ export default function App({ Component, pageProps }: AppProps) {
           `,
         }}
       />
-      <Layout
-        findMeOn={pageProps.contents?.findMeOn || defaultContent.findMeOn}
-      >
-        <Component {...pageProps} />
+      <Layout>
+        <Component
+          findMeOn={pageProps.contents?.findMeOn || defaultContent.findMeOn}
+          {...pageProps}
+        />
       </Layout>
     </>
   );

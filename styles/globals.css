@@ -1,27 +1,157 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* Base theme variables */
+:root {
+  --bg-primary: #1a191d;
+  --bg-secondary: #26262d;
+  --text-primary: #ffffff;
+  --text-secondary: #a0aec0;
+  --accent-color: #3b82f6;
+  --accent-hover: #2563eb;
+  --card-bg: rgba(38, 38, 45, 0.7);
+  --card-border: rgba(255, 255, 255, 0.1);
+  --transition-speed: 0.3s;
+  --blur-bg: rgba(255, 255, 255, 0.05);
+  --icon-bg: #2d2d35;
+}
+
+/* Light theme overrides */
+.light-theme {
+  --bg-primary: #f7fafc;
+  --bg-secondary: #ffffff;
+  --text-primary: #1a1a1a;
+  --text-secondary: #4a5568;
+  --card-bg: rgba(255, 255, 255, 0.9);
+  --card-border: rgba(0, 0, 0, 0.1);
+  --blur-bg: rgba(0, 0, 0, 0.03);
+  --icon-bg: #e2e8f0;
+  --accent-color: #2563eb;
+  --accent-hover: #1d4ed8;
+}
+
+/* Dark theme overrides */
+.dark-theme {
+  --bg-primary: #1a191d;
+  --bg-secondary: #26262d;
+  --text-primary: #ffffff;
+  --text-secondary: #a0aec0;
+  --card-bg: rgba(38, 38, 45, 0.7);
+  --card-border: rgba(255, 255, 255, 0.1);
+  --blur-bg: rgba(255, 255, 255, 0.05);
+  --icon-bg: #2d2d35;
+}
+
+/* Apply theming to common elements */
+body {
+  transition: background-color var(--transition-speed), color var(--transition-speed);
+  background-color: var(--bg-primary) !important;
+  color: var(--text-primary) !important;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+/* Theme utility classes */
+.theme-bg-primary {
+  background-color: var(--bg-primary) !important;
+  transition: background-color var(--transition-speed);
+}
+
+.theme-bg-secondary {
+  background-color: var(--bg-secondary) !important;
+  transition: background-color var(--transition-speed);
+}
+
+.theme-text-primary {
+  color: var(--text-primary) !important;
+  transition: color var(--transition-speed);
+}
+
+.theme-text-secondary {
+  color: var(--text-secondary) !important;
+  transition: color var(--transition-speed);
+}
+
+.theme-card {
+  background-color: var(--card-bg) !important;
+  border-color: var(--card-border) !important;
+  color: var(--text-primary) !important;
+  transition: all var(--transition-speed);
+}
+
+.theme-blur-bg {
+  background-color: var(--blur-bg) !important;
+  backdrop-filter: blur(8px);
+  transition: background-color var(--transition-speed);
+}
+
+.theme-icon-bg {
+  background-color: var(--icon-bg) !important;
+  transition: background-color var(--transition-speed);
+}
+
+.theme-accent {
+  color: var(--accent-color) !important;
+}
+
+.theme-accent-bg {
+  background-color: var(--accent-color) !important;
+}
+
+.theme-accent-hover:hover {
+  color: var(--accent-hover) !important;
+}
+
+/* Animation utilities */
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Base typography */
 @layer base {
-  h1 {
-    @apply text-4xl font-bold leading-loose;
-  }
-
-  h2 {
-    @apply text-2xl font-bold leading-loose;
-  }
-
-  h3 {
-    @apply text-xl font-semibold leading-loose;
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   }
   strong {
     @apply font-bold;
   }
 }
+
 html {
-  font-family: 'Montserrat Alternates', sans-serif !important;
+  font-family: 'Inter', sans-serif !important;
   scroll-behavior: smooth !important;
   width: 100%;
 }
+
+/* Utility classes */
 @layer utilities {
   .clip-path-circle {
     clip-path: circle(0px at 0% 0%);
@@ -29,4 +159,113 @@ html {
   .clip-path-circle-active {
     clip-path: circle(150% at 0% 0%);
   }
+}
+
+/* Additional theme-related classes */
+.theme-bg-gradient-primary {
+  background: var(--bg-gradient-primary) !important;
+  transition: background var(--transition-speed);
+}
+
+.theme-border {
+  border-color: var(--card-border) !important;
+  transition: border-color var(--transition-speed);
+}
+
+.light-theme .theme-about-text {
+  color: #1a1a1a !important;
+  font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  font-size: 1.075rem;
+  letter-spacing: 0.015em;
+}
+
+.dark-theme .theme-about-text {
+  color: #f7fafc !important;
+  font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 400;
+  line-height: 1.7;
+  font-size: 1.075rem;
+  letter-spacing: 0.015em;
+}
+
+.theme-about-text strong {
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+.theme-about-text p {
+  margin-bottom: 1.25rem;
+}
+
+.theme-about-text p:last-child {
+  margin-bottom: 0;
+}
+
+.theme-about-text a {
+  color: var(--accent-color);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+  transition: all 0.2s ease;
+}
+
+.theme-about-text a:hover {
+  color: var(--accent-hover);
+  text-decoration-thickness: 2px;
+}
+
+/* Add this to fix specific section backgrounds */
+.light-theme .skills-section,
+.light-theme .projects-section {
+  background: linear-gradient(180deg, #f0f7ff 0%, #ffffff 100%) !important;
+}
+
+.dark-theme .skills-section,
+.dark-theme .projects-section {
+  background: linear-gradient(180deg, rgba(26,25,29,1) 0%, rgba(38,38,45,1) 100%) !important;
+}
+
+/* Add more specific control for experience section */
+.light-theme .experience-section {
+  background-color: #ffffff !important;
+}
+
+.dark-theme .experience-section {
+  background-color: var(--bg-secondary) !important;
+}
+
+/* Fix the experience timeline dot color and position */
+.light-theme .timeline-dot {
+  border-color: #e2e8f0 !important;
+}
+
+.dark-theme .timeline-dot {
+  border-color: #4a5568 !important;
+}
+
+/* Custom Font Classes */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.font-mono, code, pre {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Typography enhancement */
+.heading-text {
+  letter-spacing: -0.025em;
+}
+
+.body-text {
+  letter-spacing: 0.015em;
+}
+
+/* Add smooth transitions */
+* {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }
