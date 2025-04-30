@@ -38,7 +38,22 @@ export default function Experience({
   }, [description]);
 
   return (
-    <>      
+    <>
+      <div className="mb-4">
+        <h3 className="text-lg font-semibold theme-text-primary">{title}</h3>
+        <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 text-sm theme-text-secondary">
+          <span className="font-medium">{company}</span>
+          {location && (
+            <>
+              <span className="hidden sm:inline">•</span>
+              <span>{location}</span>
+            </>
+          )}
+          <span className="hidden sm:inline">•</span>
+          <span>{period}</span>
+        </div>
+      </div>
+      
       {description && (
         <div className="theme-text-secondary text-sm sm:text-base leading-relaxed body-text">
           {formattedContent}
