@@ -36,7 +36,7 @@ export default function Blogs({ innerRef, title }: any) {
     <section ref={innerRef} id='blogs' className='mt-16'>
       <div className='max-w-screen-xl p-4 mx-auto flex flex-col'>
         <div
-          className='font-bold pb-6 text-5xl md:text-6xl text-white'
+          className='font-bold pb-6 text-5xl md:text-6xl theme-text-primary'
           dangerouslySetInnerHTML={{ __html: title }}
         />
         <div
@@ -55,7 +55,7 @@ export default function Blogs({ innerRef, title }: any) {
           <button
             disabled={gettingBlog}
             onClick={fetchMoreBlogs}
-            className='text-white border py-2 px-4 self-center mt-6 mx-auto rounded-sm hover:scale-105 animate-pulse hover:text-blue-400 hover:border-blue-400'
+            className='theme-text-primary border py-2 px-4 self-center mt-6 mx-auto rounded-sm hover:scale-105 animate-pulse hover:text-blue-400 hover:border-blue-400'
           >
             {gettingBlog && <Spinner />}
             {gettingBlog ? 'Fetching Blogs' : 'Show More'}

@@ -1,49 +1,77 @@
-import faExternalLink from '@public/icons/faLink.svg';
-import Image from 'next/image';
+import React, { useMemo } from 'react';
 import { IExperience } from 'types';
 
-const Experience = ({
+export default function Experience({
+  title,
   company,
-  duration,
-  position,
+  period,
+  location,
   description,
-  link,
-  active,
-}: IExperience) => {
-  return (
-    <li className='mb-10 ml-8'>
-      <div className='absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white'></div>
-      <time className='mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500'>
-        {duration}
-      </time>
-      <br />
-      <a
-        href={link}
-        target='_blank'
-        rel='noreferrer'
-        className={`text-lg cursor-pointer hover:underline underline-offset-4 font-semibold ${
-          active ? 'text-blue-400' : 'text-orange-200'
-        } dark:text-white`}
-      >
-        {company}
-        <Image
-          alt='visit'
-          className='inline ml-2'
-          width={12}
-          height={12}
-          src={faExternalLink}
-        />
-      </a>
-      <div className='mb-6 text-sm font-normal text-gray-500 dark:text-gray-400'>
-        {position}
-        <br />
-        <div
-          className='text-gray-300 pt-1 text-base text-start'
-          dangerouslySetInnerHTML={{ __html: description }}
-        />
-      </div>
-    </li>
-  );
-};
+  skills,
+}: IExperience) {
+  // Memoize the formatted description to ensure consistency between renders
+  const formattedContent = useMemo(() => {
+    if (!description) return null;
+    
+    // Handle HTML content - simplified to always use dangerouslySetInnerHTML for any HTML
+    if (typeof description === 'string' && description.includes('<')) {
+      return <div dangerouslySetInnerHTML={{ __html: description }} className="prose prose-sm max-w-none theme-text-primary" />;
+    }
+    
+    // Handle plain text or convert paragraphs to bullet points
+    const cleanText = description.toString().replace(/<\/?p>/g, '');
+    const sentences = cleanText
+      .split('.')
+      .filter(sentence => sentence.trim().length > 0)
+      .map(sentence => sentence.trim() + '.');
+    
+    return (
+      <ul className="list-none space-y-2">
+        {sentences.map((sentence, index) => (
+          <li key={index} className="flex items-start">
+            <span className="text-blue-500 mr-2 mt-1">•</span>
+            <span>{sentence}</span>
+          </li>
+        ))}
+      </ul>
+    );
+  }, [description]);
 
-export default Experience;
+  return (
+    <>
+      <div className="mb-4">
+        <h3 className="text-lg font-semibold theme-text-primary">{title}</h3>
+        <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 text-sm theme-text-secondary">
+          <span className="font-medium">{company}</span>
+          {location && (
+            <>
+              <span className="hidden sm:inline">•</span>
+              <span>{location}</span>
+            </>
+          )}
+          <span className="hidden sm:inline">•</span>
+          <span>{period}</span>
+        </div>
+      </div>
+      
+      {description && (
+        <div className="theme-text-secondary text-sm sm:text-base leading-relaxed body-text">
+          {formattedContent}
+        </div>
+      )}
+      
+      {skills && skills.length > 0 && (
+        <div className="flex flex-wrap gap-2 mt-4">
+          {skills.map((skill) => (
+            <span 
+              key={skill}
+              className="px-3 py-1 text-xs font-medium rounded-full bg-blue-500/10 text-blue-500 hover:bg-blue-500/20 transition-colors duration-200"
+            >
+              {skill}
+            </span>
+          ))}
+        </div>
+      )}
+    </>
+  );
+}

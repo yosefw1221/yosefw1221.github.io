@@ -1,5 +1,6 @@
 import React from 'react';
 import { ReactNode, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export const FormItem = ({
   label,
@@ -23,8 +24,8 @@ export const FormItem = ({
   };
 
   return (
-    <div className='flex flex-col'>
-      <label className='text-xs ml-2 mt-2 text-gray-300' htmlFor={id}>
+    <div className='flex flex-col mb-2'>
+      <label className='text-sm mb-1 ml-2 font-medium theme-text-primary opacity-80' htmlFor={id}>
         {label}
       </label>
       <div className='flex flex-col'>
@@ -34,11 +35,18 @@ export const FormItem = ({
           onBlur: handleOnBlur,
           onChange: () => setError(''),
         })}
-        {error && (
-          <span style={{ color: '#ff6889' }} className='error text-xs ml-4'>
-            {error}
-          </span>
-        )}
+        <AnimatePresence>
+          {error && (
+            <motion.span 
+              initial={{ opacity: 0, y: -10, height: 0 }}
+              animate={{ opacity: 1, y: 0, height: 'auto' }}
+              exit={{ opacity: 0, y: -10, height: 0 }}
+              className='text-red-500 text-xs mt-1 ml-3 font-medium'
+            >
+              {error}
+            </motion.span>
+          )}
+        </AnimatePresence>
       </div>
     </div>
   );

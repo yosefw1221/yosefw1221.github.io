@@ -28,12 +28,16 @@ export type IHead = {
 };
 
 export type IExperience = {
+  title: string;
   company: string;
-  link: string;
-  position: string;
-  duration: string;
+  link?: string;
+  position?: string;
+  period: string;
+  duration?: string;
+  location: string;
   description: string;
-  active: boolean;
+  active?: boolean;
+  skills?: string[];
 };
 
 export type INavItem = {
@@ -66,7 +70,7 @@ export type ISocialLink = {
   name: string;
   link: string;
   icon: string;
-}
+};
 
 export type IContents = {
   head: IHead;

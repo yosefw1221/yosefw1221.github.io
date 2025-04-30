@@ -5,6 +5,7 @@ import { useProjects } from '@firebase/projects/useProjects';
 import { DocumentSnapshot } from 'firebase/firestore';
 import Spinner from '@components/Spinner';
 import Loading from '@components/Loading';
+import { motion } from 'framer-motion';
 
 type IProjectsProps = {
   innerRef: LegacyRef<HTMLDivElement>;
@@ -37,14 +38,27 @@ export default function Index({ innerRef, title }: IProjectsProps) {
   };
 
   return (
-    <section ref={innerRef} id='projects' className='mb-8'>
-      <div className=' max-w-screen-xl p-4 mx-auto flex flex-col'>
-        <div
-          className='font-semibold py-4 text-5xl md:text-6xl text-white'
-          dangerouslySetInnerHTML={{ __html: title }}
-        />
-        <div className='grid md:grid-cols-2 items-stretch justify-center lg:grid-cols-3 gap-6 flex-wrap'>
-          {projects.map((project) => (
+    <section 
+      ref={innerRef} 
+      id='projects' 
+      className='projects-section py-20 relative'
+    >
+      <div className='max-w-screen-xl mx-auto px-4 relative z-10'>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+          className="mb-12"
+        >
+          <h2
+            className='font-semibold text-5xl md:text-6xl theme-text-primary'
+            dangerouslySetInnerHTML={{ __html: title }}
+          />
+          <div className="w-24 h-1 bg-blue-500 mt-2"></div>
+        </motion.div>
+        
+        <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-8'>
+          {projects.map((project, index) => (
             <PortfolioCard
               key={project.id}
               image={project.thumbnail}
@@ -56,26 +70,50 @@ export default function Index({ innerRef, title }: IProjectsProps) {
             />
           ))}
         </div>
-        {(gettingProject && (
-          <span
+        
+        {gettingProject && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             className={`${
               !projects?.length ? 'h-[30rem]' : ''
-            } flex items-center justify-center`}
+            } flex items-center justify-center my-8`}
           >
             <Loading />
-          </span>
-        )) ||
-          null}
-        {hasMoreProjects && (
-          <button
-            disabled={gettingProject}
-            onClick={fetchMoreProjects}
-            className='text-white border py-2 px-4 self-center mt-6 mx-auto rounded-sm hover:scale-105 animate-pulse hover:text-blue-400 hover:border-blue-400'
-          >
-            {gettingProject && <Spinner />}
-            {gettingProject ? 'Fetching Projects' : 'Show More'}
-          </button>
+          </motion.div>
         )}
+        
+        {hasMoreProjects && (
+          <motion.div 
+            className="flex justify-center mt-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+          >
+            <motion.button
+              disabled={gettingProject}
+              onClick={fetchMoreProjects}
+              className='theme-text-primary border theme-border py-3 px-6 rounded-full hover:bg-blue-500/20 transition-all'
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              {gettingProject ? (
+                <span className="flex items-center">
+                  <Spinner />
+                  <span className="ml-2">Loading Projects</span>
+                </span>
+              ) : (
+                'View More Projects'
+              )}
+            </motion.button>
+          </motion.div>
+        )}
+      </div>
+      
+      {/* Background elements */}
+      <div className="absolute top-0 left-0 w-full h-full overflow-hidden">
+        <div className="absolute top-1/3 right-1/4 w-64 h-64 rounded-full bg-blue-600 filter blur-[100px] opacity-10"></div>
+        <div className="absolute bottom-1/4 left-1/3 w-80 h-80 rounded-full bg-indigo-600 filter blur-[100px] opacity-5"></div>
       </div>
     </section>
   );
