@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { FiDownload, FiMail, FiPhone, FiGlobe, FiGithub, FiLinkedin, FiAward, FiCalendar, FiMapPin } from 'react-icons/fi';
 
@@ -40,9 +41,9 @@ export default function Resume() {
           animate={{ opacity: 1, y: 0 }}
           className="flex justify-between items-center mb-8"
         >
-          <a href="/" className="theme-text-secondary hover:text-blue-500 transition-colors">
+          <Link href="/" className="theme-text-secondary hover:text-blue-500 transition-colors">
             ← Back to Portfolio
-          </a>
+          </Link>
 
           <motion.a
             href="/Yosef_Worku_Resume_2025.pdf"
@@ -51,7 +52,7 @@ export default function Resume() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <FiDownload />
+            <FiDownload size={18} />
             <span>Download PDF</span>
           </motion.a>
         </motion.div>
@@ -72,19 +73,19 @@ export default function Resume() {
 
             <div className="flex flex-wrap justify-center gap-4 theme-text-secondary text-sm">
               <a href="mailto:yosefworku1221@gmail.com" className="flex items-center gap-1 hover:text-blue-500 transition-colors">
-                <FiMail /> yosefworku1221@gmail.com
+                <FiMail size={14} /> yosefworku1221@gmail.com
               </a>
               <span className="flex items-center gap-1">
-                <FiPhone /> +251920005744
+                <FiPhone size={14} /> +251920005744
               </span>
               <a href="https://yosefw.vercel.app" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:text-blue-500 transition-colors">
-                <FiGlobe /> yosefw.vercel.app
+                <FiGlobe size={14} /> yosefw.vercel.app
               </a>
               <a href="https://linkedin.com/in/yosef-worku" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:text-blue-500 transition-colors">
-                <FiLinkedin /> LinkedIn
+                <FiLinkedin size={14} /> LinkedIn
               </a>
               <a href="https://github.com/yosefw1221" target="_blank" rel="noopener noreferrer" className="flex items-center gap-1 hover:text-blue-500 transition-colors">
-                <FiGithub /> GitHub
+                <FiGithub size={14} /> GitHub
               </a>
             </div>
           </motion.header>
@@ -137,11 +138,11 @@ export default function Resume() {
                 <div>
                   <h3 className="text-xl font-bold theme-text-primary">Full Stack Developer</h3>
                   <p className="text-base font-semibold theme-text-secondary flex items-center gap-2 mt-1">
-                    Addis Software | <span className="flex items-center gap-1"><FiMapPin size={14} /> Addis Ababa, Ethiopia</span>
+                    Addis Software | <span className="flex items-center gap-1"><FiMapPin size={12} /> Addis Ababa, Ethiopia</span>
                   </p>
                 </div>
                 <span className="theme-text-secondary text-sm flex items-center gap-1">
-                  <FiCalendar size={14} /> June 2022 - Present (3+ years)
+                  <FiCalendar size={12} /> June 2022 - Present (3+ years)
                 </span>
               </div>
               <p className="text-sm text-blue-500 font-semibold mb-3">Project: Link Builder - Web Scraping and Link Management Platform</p>
@@ -168,18 +169,18 @@ export default function Resume() {
                 <div>
                   <h3 className="text-xl font-bold theme-text-primary">DevOps & Android Developer</h3>
                   <p className="text-base font-semibold theme-text-secondary flex items-center gap-2 mt-1">
-                    IE Network Solution | <span className="flex items-center gap-1"><FiMapPin size={14} /> Addis Ababa, Ethiopia</span>
+                    IE Network Solution | <span className="flex items-center gap-1"><FiMapPin size={12} /> Addis Ababa, Ethiopia</span>
                   </p>
                 </div>
                 <span className="theme-text-secondary text-sm flex items-center gap-1">
-                  <FiCalendar size={14} /> January 2021 - June 2021 (6 months)
+                  <FiCalendar size={12} /> January 2021 - June 2021 (6 months)
                 </span>
               </div>
               <p className="text-sm text-blue-500 font-semibold mb-3">Project: Performance Enhancement Platform - ERP Systems</p>
 
               <p className="font-semibold theme-text-primary mb-2">Key Achievements:</p>
               <ul className="list-disc list-outside ml-5 theme-text-secondary space-y-1.5 text-sm">
-                <li>Developed <strong>Fleet Management Driver's Android app</strong> deployed to 50+ drivers managing vehicle tracking, trip logging, and real-time updates</li>
+                <li>Developed <strong>Fleet Management Driver&apos;s Android app</strong> deployed to 50+ drivers managing vehicle tracking, trip logging, and real-time updates</li>
                 <li>Designed and implemented <strong>CI/CD pipeline</strong> using Jenkins and GitLab, reducing deployment time from 2 hours to 15 minutes</li>
                 <li>Automated <strong>API endpoint testing</strong> using REST Assured and JUnit, creating 100+ test cases and reducing manual testing effort by 70%</li>
                 <li>Gathered and documented requirements for CRM and Fleet Management modules serving 100+ enterprise users</li>
@@ -196,11 +197,11 @@ export default function Resume() {
                 <div>
                   <h3 className="text-xl font-bold theme-text-primary">Android Developer</h3>
                   <p className="text-base font-semibold theme-text-secondary flex items-center gap-2 mt-1">
-                    Josystems | <span className="flex items-center gap-1"><FiMapPin size={14} /> Remote</span>
+                    Josystems | <span className="flex items-center gap-1"><FiMapPin size={12} /> Remote</span>
                   </p>
                 </div>
                 <span className="theme-text-secondary text-sm flex items-center gap-1">
-                  <FiCalendar size={14} /> May 2018 - December 2021 (3+ years)
+                  <FiCalendar size={12} /> May 2018 - December 2021 (3+ years)
                 </span>
               </div>
               <p className="text-sm text-blue-500 font-semibold mb-3">Project: University Choice Helper</p>
@@ -316,7 +317,7 @@ export default function Resume() {
           {/* Awards */}
           <motion.section variants={itemVariants} className="mb-10">
             <h2 className="text-2xl font-bold theme-text-primary mb-4 flex items-center gap-2">
-              <FiAward /> Awards & Achievements
+              <FiAward size={24} /> Awards & Achievements
             </h2>
             <div className="space-y-4">
               <div>
@@ -325,11 +326,11 @@ export default function Resume() {
               </div>
               <div>
                 <h3 className="font-bold theme-text-primary text-base">🥇 1st Place Winner - Android Kotlin Study Jams Competition (2020)</h3>
-                <p className="theme-text-secondary text-sm ml-6">Team Lead for "Book Sharing App"</p>
+                <p className="theme-text-secondary text-sm ml-6">Team Lead for &quot;Book Sharing App&quot;</p>
               </div>
               <div>
                 <h3 className="font-bold theme-text-primary text-base">🥈 2nd Place Winner - Ethiopia Hacks v10.0 Hackathon (2020)</h3>
-                <p className="theme-text-secondary text-sm ml-6">"Ethio Emergency App" - Cross-platform solution</p>
+                <p className="theme-text-secondary text-sm ml-6">&quot;Ethio Emergency App&quot; - Cross-platform solution</p>
               </div>
             </div>
           </motion.section>
