@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yosef Worku - Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Calibri', 'Arial', sans-serif;
+            font-size: 11pt;
+            line-height: 1.5;
+            color: #222222;
+            background: #f5f5f5;
+            padding: 30px 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 8.5in;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 0.6in 0.75in;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #333333;
+        }
+
+        .header h1 {
+            font-size: 24pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+            color: #1a1a1a;
+        }
+
+        .header h2 {
+            font-size: 13pt;
+            font-weight: 400;
+            margin-bottom: 10px;
+            color: #555555;
+        }
+
+        .contact-info {
+            font-size: 10pt;
+            line-height: 1.5;
+            color: #444444;
+        }
+
+        .contact-info span {
+            margin: 0 10px;
+            display: inline-block;
+        }
+
+        .contact-info span::before {
+            content: "| ";
+            margin-right: 5px;
+            color: #999999;
+        }
+
+        .contact-info span:first-child::before {
+            content: "";
+            margin-right: 0;
+        }
+
+        .section {
+            margin-bottom: 10px;
+        }
+
+        .section-title {
+            font-size: 12pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #1a1a1a;
+            border-bottom: 2px solid #333333;
+            padding-bottom: 4px;
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        .summary {
+            text-align: justify;
+            margin-bottom: 10px;
+            line-height: 1.5;
+            color: #333333;
+        }
+
+        .competencies {
+            background: #f9f9f9;
+            padding: 10px 12px;
+            border-left: 3px solid #555555;
+            margin-top: 8px;
+        }
+
+        .competencies strong {
+            color: #1a1a1a;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 6px;
+        }
+
+        .skill-item {
+            display: flex;
+            padding: 5px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .skill-item:last-child {
+            border-bottom: none;
+        }
+
+        .skill-label {
+            font-weight: 600;
+            min-width: 180px;
+            color: #1a1a1a;
+        }
+
+        .skill-value {
+            flex: 1;
+            color: #444444;
+        }
+
+        .experience-item {
+            margin-bottom: 16px;
+            padding-left: 0;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+            align-items: baseline;
+        }
+
+        .job-title {
+            font-weight: 700;
+            font-size: 11.5pt;
+            color: #1a1a1a;
+        }
+
+        .job-date {
+            font-style: italic;
+            white-space: nowrap;
+            color: #666666;
+            font-size: 10pt;
+        }
+
+        .company-location {
+            margin-bottom: 4px;
+            color: #444444;
+            font-weight: 500;
+        }
+
+        .job-description {
+            margin-bottom: 6px;
+            color: #555555;
+            font-style: italic;
+        }
+
+        ul {
+            margin-left: 20px;
+            margin-top: 6px;
+            margin-bottom: 8px;
+        }
+
+        li {
+            margin-bottom: 5px;
+            color: #333333;
+            line-height: 1.5;
+        }
+
+        .technologies {
+            font-style: italic;
+            margin-top: 6px;
+            font-size: 10pt;
+            color: #555555;
+        }
+
+        .project-item {
+            margin-bottom: 14px;
+            page-break-inside: avoid;
+        }
+
+        .project-header {
+            font-weight: 700;
+            font-size: 11.5pt;
+            margin-bottom: 3px;
+            color: #1a1a1a;
+        }
+
+        .project-meta {
+            font-style: italic;
+            margin-bottom: 6px;
+            font-size: 10pt;
+            color: #666666;
+        }
+
+        .project-link {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        .project-link:hover {
+            text-decoration: underline;
+        }
+
+        .impact {
+            font-weight: 600;
+            margin-top: 6px;
+            color: #1a1a1a;
+        }
+
+        .award-item {
+            margin-bottom: 10px;
+        }
+
+        .award-title {
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 3px;
+        }
+
+        .award-item div:not(.award-title) {
+            color: #444444;
+            line-height: 1.5;
+        }
+
+        .education-item {
+            margin-bottom: 8px;
+        }
+
+        .degree {
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 3px;
+        }
+
+        .education-item div:not(.degree) {
+            color: #444444;
+        }
+
+        .cert-item {
+            margin-bottom: 8px;
+        }
+
+        .cert-name {
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 2px;
+        }
+
+        .cert-item div:not(.cert-name) {
+            color: #444444;
+            font-size: 10pt;
+        }
+
+        .section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section p {
+            line-height: 1.5;
+            color: #333333;
+        }
+
+        strong {
+            color: #1a1a1a;
+        }
+
+        @media print {
+            @page {
+                size: A4;
+                margin: 0.75in;
+            }
+
+            body {
+                background: #ffffff;
+                padding: 0;
+            }
+
+            .container {
+                box-shadow: none;
+                padding: 0;
+            }
+
+            .header {
+                margin-bottom: 30px;
+            }
+
+            .section {
+                page-break-inside: auto;
+            }
+
+            .section:first-of-type {
+                padding-top: 0;
+            }
+
+            .experience-item, .project-item {
+                page-break-inside: avoid;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            body {
+                padding: 15px 10px;
+            }
+
+            .container {
+                padding: 20px;
+            }
+
+            .header h1 {
+                font-size: 20pt;
+            }
+
+            .contact-info span {
+                display: block;
+                margin: 3px 0;
+            }
+
+            .contact-info span::before {
+                content: "";
+                margin-right: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <div class="header">
+        <h1>YOSEF WORKU</h1>
+        <h2>Mid-Senior Software Engineer</h2>
+        <div class="contact-info">
+            <span>Email: yosefworku1221@gmail.com</span>
+            <span>Phone: +251920005744</span><br>
+            <span>LinkedIn: linkedin.com/in/yosef-worku</span>
+            <span>Website: yosefw.dev</span>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">PROFESSIONAL SUMMARY</div>
+        <div class="summary">
+Software Engineer with 5 years of professional experience (coding since grade 9) in the MERN stack and Android
+development. Demonstrated success in optimizing performance and integrating APIs, with key achievements including a 4x
+speed improvement and developing an app with over 140K active downloads. Expert in implementing complex authorization
+systems, real-time communication, and database optimization. Proven organizational, time management and multi-tasking
+skills with ability to work independently while being a good team player who enjoys delivering high quality work.
+        </div>
+        <div class="competencies">
+            <strong>Core Competencies:</strong> Attribute-Based Access Control (ABAC), Real-time Systems, MongoDB Aggregation, Progressive Web Apps, Android Development, CI/CD Pipelines, Web Scraping, RESTful Services
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">TECHNICAL SKILLS</div>
+        <div class="skills-grid">
+            <div class="skill-item">
+                <span class="skill-label">Programming Languages:</span>
+                <span class="skill-value">JavaScript, TypeScript, Java, Kotlin</span>
+            </div>
+            <div class="skill-item">
+                <span class="skill-label">Frontend:</span>
+                <span class="skill-value">React.js, Redux, Redux-saga, Next.js, Tailwind CSS, HTML5, CSS3, PWA</span>
+            </div>
+            <div class="skill-item">
+                <span class="skill-label">Backend:</span>
+                <span class="skill-value">Node.js, Express.js, RESTful API, Socket.io</span>
+            </div>
+            <div class="skill-item">
+                <span class="skill-label">Databases:</span>
+                <span class="skill-value">MongoDB, MySQL, SQLite, Firebase Firestore</span>
+            </div>
+            <div class="skill-item">
+                <span class="skill-label">Mobile Development:</span>
+                <span class="skill-value">Android (Java/Kotlin), React Native, Flutter</span>
+            </div>
+            <div class="skill-item">
+                <span class="skill-label">DevOps & Tools:</span>
+                <span class="skill-value">Docker, GitLab Action, Git, Jenkins, CI/CD, Apache2, Bash</span>
+            </div>
+            <div class="skill-item">
+                <span class="skill-label">Testing:</span>
+                <span class="skill-value">RestAssured, JUnit4, API Testing</span>
+            </div>
+            <div class="skill-item">
+                <span class="skill-label">Additional Technologies:</span>
+                <span class="skill-value">Puppeteer, 2Captcha, 1Password, AES Encryption, Service Workers, BLUFI Protocol</span>
+            </div>
+            <div class="skill-item">
+                <span class="skill-label">AI & Development Tools:</span>
+                <span class="skill-value">AI Integration, LLM APIs, Prompt Engineering</span>
+            </div>
+            <div class="skill-item">
+                <span class="skill-label">Design & IDEs:</span>
+                <span class="skill-value">VSCode, Android Studio, Xcode, Figma, Adobe XD</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">PROFESSIONAL EXPERIENCE</div>
+
+        <div class="experience-item">
+            <div class="experience-header">
+                <span class="job-title">Lead Software Engineer</span>
+                <span class="job-date">November 2023 - Present</span>
+            </div>
+            <div class="company-location">Addis Software (Acquired by Nordic) | Addis Ababa, Ethiopia</div>
+            <div class="job-description">Led the development of the "Affcollect" platform as a Lead Developer and spearheaded the technical side of the Nordic acquisition</div>
+            <ul>
+                <li>Led the technical due diligence and integration process during Nordic's acquisition of Addis Software, ensuring seamless transition of systems and processes</li>
+                <li>Achieved a 4x improvement in scraping speed through efficient use of a clustered approach and code optimization</li>
+                <li>Increased platform coverage by 110% through the integration of 20+ affiliate systems</li>
+                <li>Integrated third-party APIs and services, including 1Password, to expand system capabilities and enhance security features</li>
+                <li>Improved product stability by enhancing the error logging system, leading to faster issue identification and resolution</li>
+                <li>Developed external REST APIs to enable third-party system integration</li>
+            </ul>
+            <div class="technologies">Technologies: Node.js, React.js, Express.js, MongoDB, Puppeteer, 1Password, REST API, Web Scraping</div>
+        </div>
+
+        <div class="experience-item">
+            <div class="experience-header">
+                <span class="job-title">Software Engineer</span>
+                <span class="job-date">June 2022 - November 2023</span>
+            </div>
+            <div class="company-location">Addis Software | Addis Ababa, Ethiopia</div>
+            <div class="job-description">Contributed to the "LinkBuilders" platform as a Full-Stack Developer</div>
+            <ul>
+                <li>Architected and implemented Attribute-Based Access Control (ABAC) system with MongoDB aggregation, enabling granular permissions across multiple user roles and resource attributes</li>
+                <li>Built custom MongoDB plugin for activity logging with efficient querying and data retention strategies, enabling tracking and reverting of user actions</li>
+                <li>Developed real-time chat system using Socket.io with message persistence and typing indicators</li>
+                <li>Converted the platform into a Progressive Web App (PWA), implementing service workers, push notifications, and caching strategies</li>
+                <li>Created custom error logging system for frontend and backend with automatic error categorization</li>
+                <li>Refactored and maintained existing codebase, improving performance and code quality</li>
+            </ul>
+            <div class="technologies">Technologies: Node.js, React.js, Express.js, MongoDB, Socket.io, PWA, Redux, Redux-saga, Service Workers, Web Scraping</div>
+        </div>
+
+        <div class="experience-item">
+            <div class="experience-header">
+                <span class="job-title">DevOps | Android Developer</span>
+                <span class="job-date">January 2022 - June 2022</span>
+            </div>
+            <div class="company-location">IE Network Solutions | Addis Ababa, Ethiopia</div>
+            <div class="job-description">Worked on Performance Enhancement Platform - ERP Systems</div>
+            <ul>
+                <li>Streamlined software delivery: Implemented CI/CD pipelines using GitLab, Jenkins, and Apache2 server to automate and optimize the build, test, and deployment process</li>
+                <li>Developed Fleet Management Driver's Android app deployed to drivers for vehicle tracking, trip logging, and real-time updates</li>
+                <li>API testing: Automated API endpoint testing using RestAssured and JUnit4, enabling thorough and reliable testing of API functionality</li>
+                <li>Collaborated on ERP system development: Actively engaged in requirements gathering for CRM and Fleet Management system modules, working closely with stakeholders to translate business needs into technical specifications</li>
+            </ul>
+            <div class="technologies">Technologies: Java, Android, JUnit4, RestAssured, Apache2, Jenkins, GitLab, MySQL, Linux</div>
+        </div>
+
+    </div>
+
+    <div class="section">
+        <div class="section-title">KEY PROJECTS</div>
+
+        <div class="project-item">
+            <div class="project-header">MongoDB ABAC Plugin (In Development)</div>
+            <div class="project-meta">Open Source Tool | Current</div>
+            <p>Building a MongoDB plugin that applies Attribute-Based Access Control (ABAC) directly to MongoDB aggregation pipelines and methods. Integrates seamlessly with CASL and popular Node.js access control packages, enabling developers to enforce fine-grained permissions at the database layer.</p>
+            <div class="impact">Impact: Simplifies implementation of complex authorization logic in Node.js applications</div>
+            <div class="technologies">Technologies: Node.js, MongoDB, CASL, TypeScript, Access Control</div>
+        </div>
+
+        <div class="project-item">
+            <div class="project-header">AI-Powered Todo Management</div>
+            <div class="project-meta">Demo Project | 2025 | <a href="https://ai-todo-beta.vercel.app" class="project-link">ai-todo-beta.vercel.app</a></div>
+            <p>Interactive todo management application with AI-powered natural language processing. Users can manage tasks through conversational chat using tool calling and function invocation.</p>
+            <strong>Key Features:</strong>
+            <ul>
+                <li>Natural language task management</li>
+                <li>AI-powered task categorization and prioritization</li>
+                <li>Function calling for CRUD operations</li>
+                <li>Real-time updates and smart suggestions</li>
+            </ul>
+            <div class="technologies">Technologies: Next.js, TypeScript, AI/LLM Integration, Tool Calling, Vercel</div>
+        </div>
+
+        <div class="project-item">
+            <div class="project-header">GREMS Mobile App</div>
+            <div class="project-meta">Client Project | March 2024 - September 2024 | Client: Big Data labs technology FZE</div>
+            <ul>
+                <li>Developed a cross-platform mobile application for configuring and setting up wireless controllers using the BLUFI protocol</li>
+                <li>Implemented features for seamless pairing of multiple Bluetooth sensors and devices, ensuring reliable and secure connectivity</li>
+                <li>Designed a user-friendly interface to facilitate an intuitive setup process for users on both Android and iOS platforms</li>
+            </ul>
+            <div class="technologies">Technologies: React Native, Objective C, Java, Xcode, Android Studio</div>
+        </div>
+
+        <div class="project-item">
+            <div class="project-header">Android InApp Purchase SDK</div>
+            <div class="project-meta">Open Source Library | October 2022 - November 2022 | <a href="https://yosefw1221.github.io/chapa-in-app-purchase-doc/" class="project-link">yosefw1221.github.io/chapa-in-app-purchase-doc</a></div>
+            <p>Open-source Android SDK integrating Chapa payment gateway for in-app purchases with subscription support and secure payment processing.</p>
+            <strong>Key Features:</strong>
+            <ul>
+                <li>Subscription management with trial period support</li>
+                <li>In-app item purchases with secure payment data encryption using AES encryption</li>
+                <li>Simple integration API</li>
+            </ul>
+            <div class="technologies">Technologies: Kotlin, Java, AES encryption, Cipher, Chapa API</div>
+        </div>
+
+        <div class="project-item">
+            <div class="project-header">Mezgebe Tselot Zetewahdo</div>
+            <div class="project-meta">Android App | January 2021 - Present | <a href="https://play.google.com/store/apps/details?id=com.yosef.ethiopian.orthodox.mezgebe.teselot" class="project-link">Google Play Store</a></div>
+            <p>Ethiopian Orthodox prayer book application serving the diaspora community with 140K active downloads, 396K total downloads, 80.8K monthly active users and 4.7 star rating.</p>
+            <div class="impact">Impact: Helping thousands of Orthodox Christians who live abroad and don't get prayer books easily</div>
+            <strong>Key Features:</strong>
+            <ul>
+                <li>Comprehensive collection of Orthodox prayers and liturgies with offline access</li>
+                <li>Firebase Firestore sync for updates</li>
+                <li>Automatic do-not-disturb mode during prayer times</li>
+                <li>Clean, accessible UI with Ge'ez text support and customizable interface</li>
+            </ul>
+            <div class="technologies">Technologies: Kotlin, Firebase Firestore, Android, SQLite, Figma</div>
+        </div>
+
+        <div class="project-item">
+            <div class="project-header">University Choice Helper</div>
+            <div class="project-meta">Android App | May 2018 - December 2021 | Solo Developer</div>
+            <p>Independently designed and developed University Choice Helper Android app downloaded by 5,000+ Ethiopian students.</p>
+            <strong>Key Features:</strong>
+            <ul>
+                <li>Intelligent ranking algorithm considering multiple factors: climate preference, academic department, region, and university rankings</li>
+                <li>Optimized SQLite database schema handling data for 100+ universities with efficient querying</li>
+                <li>Intuitive UI/UX using Material Design principles</li>
+                <li>Full development lifecycle management from requirements analysis to deployment</li>
+            </ul>
+            <div class="technologies">Technologies: Kotlin, Java, SQLite, RestAssured, Glide, Material Design</div>
+        </div>
+
+        <div class="project-item">
+            <div class="project-header">MyCollege App</div>
+            <div class="project-meta">Android App | 2020 | <a href="https://tinyurl.com/ykttewtr" class="project-link">Google Play Store</a></div>
+            <strong>Key Features:</strong>
+            <ul>
+                <li>Timetable management with QR code sharing</li>
+                <li>Automatic phone silencing during classes</li>
+                <li>Exam and task reminders with smart notifications</li>
+                <li>Grade tracking and GPA calculator</li>
+            </ul>
+            <div class="technologies">Technologies: Kotlin, Android, Room Database, QR Code Generation, WorkManager</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">AWARDS & ACHIEVEMENTS</div>
+
+        <div class="award-item">
+            <div class="award-title">TOP 10 Finalist - Ethiopic App Contest Competition (2021)</div>
+            <div>Selected from 200+ submissions nationwide for innovative mobile application</div>
+        </div>
+
+        <div class="award-item">
+            <div class="award-title">1st Place Winner - Android Kotlin Study Jams Competition (2020)</div>
+            <div>Team Lead for "Book Sharing App" - Led team of 4 developers to victory in national competition</div>
+            <div><em>Platform: Android | Role: Android Developer & Team Lead</em></div>
+        </div>
+
+        <div class="award-item">
+            <div class="award-title">2nd Place Winner - Ethiopia Hacks v10.0 Hackathon (2020)</div>
+            <div>"Ethio Emergency App" - Cross-platform emergency response system</div>
+            <div><em>Platform: Android & Web App | Role: Android Developer</em></div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">EDUCATION</div>
+
+        <div class="education-item">
+            <div class="degree">Bachelor of Science in Electrical & Computer Engineering (Computer Stream)</div>
+            <div>Mizan Tepi University | Ethiopia | 2017 - 2022</div>
+            <div>Graduated: August 2021</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">CERTIFICATIONS & TRAINING</div>
+
+        <div class="cert-item">
+            <div class="cert-name">MongoDB Certified Associate Data Modeler</div>
+            <div>View on Credly: credly.com</div>
+        </div>
+
+        <div class="cert-item">
+            <div class="cert-name">Cisco Networking CCNA 1-4 Certificate</div>
+            <div>Cisco Networking Academy</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">LANGUAGES</div>
+        <p><strong>English</strong> - Professional Working Proficiency | <strong>Amharic</strong> - Native</p>
+    </div>
+    </div>
+</body>
+</html>

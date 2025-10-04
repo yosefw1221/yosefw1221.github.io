@@ -360,22 +360,22 @@ async function getTopAuthors() {
           transition={{ duration: 0.7 }}
         >
           {/* Title with TypeWriter Effect */}
-          <motion.div 
-            className="mb-2 inline-flex theme-text-secondary items-center rounded-full bg-blue-500/5 px-2 py-1 text-sm" 
+          <motion.div
+            className="mb-2 inline-flex theme-text-secondary items-center rounded-full bg-blue-500/5 px-2 py-1 text-sm"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
           >
-            <span className="font-mono">senior_backend_developer</span>
-            <motion.span 
+            <span className="font-mono">full_stack_developer</span>
+            <motion.span
               className="ml-1 opacity-80"
-              animate={{ 
-                opacity: [1, 0, 1] 
+              animate={{
+                opacity: [1, 0, 1]
               }}
-              transition={{ 
-                duration: 1, 
-                repeat: Infinity, 
-                repeatType: "loop" 
+              transition={{
+                duration: 1,
+                repeat: Infinity,
+                repeatType: "loop"
               }}
             >|</motion.span>
           </motion.div>
@@ -433,7 +433,7 @@ async function getTopAuthors() {
             </a>
           </div>
           
-          <motion.div 
+          <motion.div
             className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -449,14 +449,35 @@ async function getTopAuthors() {
                 <span className="mr-2 font-mono">$</span>
                 <span>Contact Me</span>
               </span>
-              <motion.div 
+              <motion.div
                 className="absolute inset-0 bg-gradient-to-r from-blue-700 to-blue-600 z-0"
                 initial={{ x: "-100%" }}
                 whileHover={{ x: 0 }}
                 transition={{ duration: 0.4 }}
               />
             </motion.a>
-            
+
+            <motion.a
+              href="/Yosef_Worku_Resume_2025.pdf"
+              download
+              className="relative bg-gradient-to-tr from-green-600 to-green-500 text-white font-medium py-3 px-8 rounded-md shadow-lg hover:shadow-green-500/25 overflow-hidden group"
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <span className="relative z-10 flex items-center justify-center">
+                <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                <span>Download CV</span>
+              </span>
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-green-700 to-green-600 z-0"
+                initial={{ x: "-100%" }}
+                whileHover={{ x: 0 }}
+                transition={{ duration: 0.4 }}
+              />
+            </motion.a>
+
             <motion.a
               href="#projects"
               className="relative bg-gradient-to-tr from-transparent to-transparent theme-text-primary border border-blue-500/30 font-medium py-3 px-8 rounded-md overflow-hidden group"
@@ -467,7 +488,7 @@ async function getTopAuthors() {
                 <span className="mr-2 font-mono">./</span>
                 <span>View Projects</span>
               </span>
-              <motion.div 
+              <motion.div
                 className="absolute inset-0 bg-blue-500/10 z-0"
                 initial={{ y: "100%" }}
                 whileHover={{ y: 0 }}
