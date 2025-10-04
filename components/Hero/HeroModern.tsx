@@ -122,7 +122,7 @@ export default function HeroModern({ innerRef, content }: IHeroProps) {
               transition={{ delay: 0.3 }}
             >
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-                <span className="theme-text-primary">Hi, I'm </span>
+                <span className="theme-text-primary">Hi, I&apos;m </span>
                 <span className="bg-gradient-to-r from-blue-500 to-purple-600 bg-clip-text text-transparent">
                   Yosef Worku
                 </span>
@@ -164,7 +164,7 @@ export default function HeroModern({ innerRef, content }: IHeroProps) {
                 whileTap={{ scale: 0.95 }}
               >
                 <span className="relative z-10 flex items-center gap-2">
-                  Let's Talk
+                  Let&apos;s Talk
                   <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
