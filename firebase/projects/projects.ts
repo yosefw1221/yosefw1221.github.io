@@ -3,6 +3,7 @@ import {
   getCountFromServer,
   getDocs,
   limit,
+  orderBy,
   query,
   startAfter,
   where,
@@ -15,8 +16,9 @@ export const getProjects = async (
   cursor?: DocumentSnapshot<IProject>
 ) => {
   const _query = [
+    where('published', '==', 'true'),
+    orderBy('order', 'asc'),
     limit(pageSize),
-    where('published', '!=', 'false'),
     ...(cursor ? [startAfter(cursor)] : []),
   ];
   const projectQuery = query(ProjectCollection, ..._query);

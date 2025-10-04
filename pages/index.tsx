@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import Head from 'next/head';
-import Hero from '@components/Hero';
+import Hero from '@components/Hero/HeroModern';
 import Skills from '@components/Skills';
 import About from '@components/About';
 import Projects from '@components/Projects';
@@ -20,7 +20,6 @@ export default function Home({ contents, findMeOn }: { contents: IContents, find
   const [refs, activeHash] = useElementObserver(8);
   
   useEffect(() => {
-    // Add dark-theme class to body by default
     document.body.classList.add('dark-theme');
   }, []);
   
@@ -50,7 +49,7 @@ export default function Home({ contents, findMeOn }: { contents: IContents, find
         content={contents.skills}
         title={contents.headlines.skills}
       />
-
+      
       <Projects innerRef={refs[4]} title={contents.headlines.projects} />
       <Experiences
         innerRef={refs[5]}
@@ -70,6 +69,7 @@ export const getStaticProps: GetStaticProps = async () => {
   return {
     props: {
       contents,
+      findMeOn: contents.findMeOn || [],
     },
     revalidate: 3600,
   };

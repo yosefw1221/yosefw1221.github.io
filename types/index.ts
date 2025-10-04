@@ -20,6 +20,7 @@ export type IProject = {
   linkText: string;
   published: string;
   createdAt: string;
+  order: number;
 };
 
 export type IHead = {
@@ -28,13 +29,13 @@ export type IHead = {
 };
 
 export type IExperience = {
-  title: string;
+  title?: string;
   company: string;
   link?: string;
   position?: string;
-  period: string;
+  period?: string;
   duration?: string;
-  location: string;
+  location?: string;
   description: string;
   active?: boolean;
   skills?: string[];

@@ -1,0 +1,23 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "es2017",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "baseUrl": "..",
+    "paths": {
+      "@components/*": ["../components/*"],
+      "@public/*": ["../public/*"],
+      "@layout/*": ["../layout/*"],
+      "@hook/*": ["../hook/*"],
+      "@firebase/*": ["../firebase/*"],
+      "@utils/*": ["../utils/*"]
+    }
+  },
+  "include": ["./**/*"],
+  "exclude": ["node_modules"]
+}
